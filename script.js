@@ -30,21 +30,14 @@ function toggleMobile() {
 function toggleFaq(btn) {
     const item = btn.parentElement;
     const isOpen = item.classList.contains('open');
-
-    // Close all FAQ items
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-
-    // Open clicked item if it wasn't already open
     if (!isOpen) item.classList.add('open');
 }
 
 // Review filter functionality
 function filterReviews(category) {
-    // Update active tab
     document.querySelectorAll('.review-tab').forEach(t => t.classList.remove('active'));
     event.target.classList.add('active');
-
-    // Filter review cards
     document.querySelectorAll('.review-card').forEach(card => {
         if (category === 'all' || card.dataset.category.includes(category)) {
             card.style.display = '';
@@ -66,14 +59,12 @@ function closeVideoModal() {
     document.body.style.overflow = '';
 }
 
-// Close modal with Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeVideoModal();
 });
 
 // Select arrow animation + placeholder color
 document.querySelectorAll('.enquiry-form .select-wrapper select').forEach(sel => {
-    // Set initial state
     if (!sel.value) sel.classList.add('placeholder-shown');
     else sel.classList.remove('placeholder-shown');
 
@@ -100,7 +91,6 @@ document.addEventListener('click', (e) => {
 document.querySelectorAll('.day-circle').forEach(btn => {
     btn.addEventListener('click', () => {
         btn.classList.toggle('selected');
-        // Update hidden input with selected days
         const selected = [...document.querySelectorAll('.day-circle.selected')].map(b => b.dataset.day);
         document.getElementById('availabilityInput').value = selected.join(', ');
     });
@@ -111,19 +101,17 @@ function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.form-submit');
     const originalText = btn.textContent;
-
-    // Show success state
     btn.textContent = 'Request Sent ✓';
     btn.style.background = '#2d7a4f';
     btn.style.color = '#fff';
     btn.disabled = true;
-
-    // Reset form after delay
     setTimeout(() => {
         btn.textContent = originalText;
         btn.style.background = '';
         btn.style.color = '';
         btn.disabled = false;
         e.target.reset();
+        document.querySelectorAll('.day-circle.selected').forEach(b => b.classList.remove('selected'));
+        document.querySelectorAll('.enquiry-form select').forEach(s => s.classList.add('placeholder-shown'));
     }, 3000);
 }
