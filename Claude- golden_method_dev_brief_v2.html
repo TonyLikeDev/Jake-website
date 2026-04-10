@@ -1,0 +1,388 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;font-size:14px;color:var(--color-text-primary)}
+.wrap{padding:24px;max-width:900px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.title-block .site{font-size:20px;font-weight:600;font-family:Georgia,serif;color:var(--color-text-primary)}
+.title-block .site span{color:#C9973A;font-style:italic}
+.title-block .sub{font-size:12px;color:var(--color-text-secondary);margin-top:4px}
+.top-btns{display:flex;gap:8px;flex-shrink:0}
+.btn{padding:8px 16px;font-size:12px;cursor:pointer;border-radius:4px;font-family:Arial,sans-serif;letter-spacing:0.04em;border:none}
+.btn-gold{background:#C9973A;color:#fff}
+.btn-ghost{background:var(--color-background-secondary);color:var(--color-text-primary);border:0.5px solid var(--color-border-secondary)}
+.btn:hover{opacity:0.88}
+
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--color-border-tertiary);margin:20px 0 0}
+.tab{padding:10px 18px;font-size:13px;cursor:pointer;color:var(--color-text-secondary);border-bottom:2px solid transparent;background:none;border-top:none;border-left:none;border-right:none;font-family:Arial,sans-serif}
+.tab.active{color:#C9973A;border-bottom-color:#C9973A;font-weight:600}
+.tab:hover:not(.active){color:var(--color-text-primary)}
+.tab-content{display:none;padding-top:20px}
+.tab-content.active{display:block}
+
+.section-block{margin-bottom:20px;border:0.5px solid var(--color-border-tertiary);border-radius:8px;overflow:hidden}
+.sec-head{padding:12px 16px;background:var(--color-background-secondary);display:flex;align-items:center;gap:10px;cursor:pointer}
+.sec-head:hover{background:var(--color-background-tertiary)}
+.sec-num{font-size:11px;font-weight:600;letter-spacing:0.1em;color:var(--color-text-secondary)}
+.sec-title{font-size:14px;font-weight:600;color:var(--color-text-primary);flex:1}
+.sec-tog{font-size:16px;color:var(--color-text-secondary)}
+.sec-body{padding:0;display:none}
+.sec-body.open{display:block}
+
+.note-row{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-top:0.5px solid var(--color-border-tertiary)}
+.note-row:first-child{border-top:none}
+.pri-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.ph{background:#E24B4A}.pm{background:#EF9F27}.pl{background:#1D9E75}
+.note-body{flex:1}
+.note-label{font-size:12px;font-weight:600;color:var(--color-text-primary);margin-bottom:3px}
+.note-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.55}
+.tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.08em;padding:2px 7px;border-radius:3px;margin-left:6px;vertical-align:middle}
+.t-change{background:#FFF0D6;color:#854F0B}
+.t-new{background:#E1F5EE;color:#0F6E56}
+.t-keep{background:#E6F1FB;color:#185FA5}
+.t-func{background:#FBEAF0;color:#993556}
+.t-remove{background:#FCEBEB;color:#A32D2D}
+
+.diff-table{width:100%;border-collapse:collapse;font-size:13px;margin:0}
+.diff-table th{text-align:left;padding:10px 14px;font-size:11px;letter-spacing:0.08em;font-weight:600;color:var(--color-text-secondary);background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.diff-table td{padding:10px 14px;border-bottom:0.5px solid var(--color-border-tertiary);vertical-align:top;line-height:1.5}
+.diff-table tr:last-child td{border-bottom:none}
+.proto{color:#854F0B;background:#FFF8EC;border-radius:3px;padding:1px 5px;font-size:12px}
+.wire{color:#0F6E56;background:#F0FBF5;border-radius:3px;padding:1px 5px;font-size:12px}
+.final{color:#185FA5;background:#EEF5FC;border-radius:3px;padding:1px 5px;font-size:12px}
+
+.flow-row{display:flex;align-items:center;gap:0;padding:16px;flex-wrap:wrap;gap:8px}
+.flow-step{background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:6px;padding:8px 14px;font-size:13px;text-align:center}
+.flow-arrow{color:var(--color-text-secondary);font-size:16px}
+.flow-note{font-size:12px;color:var(--color-text-secondary);padding:0 16px 14px}
+
+.legend{display:flex;gap:16px;margin:16px 0 4px;flex-wrap:wrap}
+.leg{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--color-text-secondary)}
+.leg-dot{width:8px;height:8px;border-radius:50%}
+
+.form-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px}
+.field-item{background:var(--color-background-secondary);border-radius:6px;padding:10px 12px;font-size:13px}
+.field-name{font-weight:600;color:var(--color-text-primary);margin-bottom:2px}
+.field-type{font-size:11px;color:var(--color-text-secondary)}
+
+.custom-note-area{padding:16px;border-top:0.5px solid var(--color-border-tertiary)}
+.custom-note-area textarea{width:100%;height:70px;font-size:13px;font-family:Arial,sans-serif;padding:8px 10px;border:0.5px solid var(--color-border-secondary);border-radius:4px;resize:none;background:var(--color-background-primary);color:var(--color-text-primary)}
+.custom-note-area textarea:focus{outline:none;border-color:#C9973A}
+.custom-note-area .row{display:flex;gap:8px;margin-top:8px;align-items:center}
+.custom-note-area select{font-size:12px;font-family:Arial,sans-serif;padding:5px 8px;border:0.5px solid var(--color-border-secondary);border-radius:4px;background:var(--color-background-primary);color:var(--color-text-primary)}
+.add-btn{background:#C9973A;color:#fff;border:none;padding:6px 14px;font-size:12px;cursor:pointer;border-radius:4px;font-family:Arial,sans-serif}
+.custom-notes-list{padding:0 16px 8px}
+.custom-note-item{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;background:var(--color-background-secondary);border-radius:6px;margin-bottom:8px;font-size:13px}
+.remove-btn{color:var(--color-text-secondary);cursor:pointer;font-size:16px;line-height:1;padding:0 2px;background:none;border:none}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div class="title-block">
+      <div class="site">The Golden <span>Method</span> — Developer Brief</div>
+      <div class="sub">Cross-referenced: Wireframe v1 + Qwen Prototype · April 2026</div>
+    </div>
+    <div class="top-btns">
+      <button class="btn btn-ghost" onclick="exportBrief()">Export .txt</button>
+      <button class="btn btn-gold" onclick="exportBrief()">Download brief</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('sections')">Sections</button>
+    <button class="tab" onclick="showTab('diff')">Wireframe vs Prototype</button>
+    <button class="tab" onclick="showTab('flow')">User flow</button>
+    <button class="tab" onclick="showTab('form')">Enquiry form</button>
+    <button class="tab" onclick="showTab('global')">Global rules</button>
+    <button class="tab" onclick="showTab('notes')">My notes</button>
+  </div>
+
+  <div id="tab-sections" class="tab-content active">
+    <div class="legend">
+      <div class="leg"><div class="leg-dot ph"></div>Must fix before launch</div>
+      <div class="leg"><div class="leg-dot pm"></div>Important</div>
+      <div class="leg"><div class="leg-dot pl"></div>Nice to have</div>
+    </div>
+    <div id="sections-list"></div>
+  </div>
+
+  <div id="tab-diff" class="tab-content">
+    <table class="diff-table">
+      <thead><tr><th>Element</th><th>Prototype (Qwen)</th><th>Wireframe</th><th>Use this</th></tr></thead>
+      <tbody id="diff-body"></tbody>
+    </table>
+  </div>
+
+  <div id="tab-flow" class="tab-content">
+    <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:12px">From wireframe: Land → Learn → Choose → Request → You decide</div>
+    <div class="flow-row" id="flow-steps"></div>
+    <div class="flow-note">Each step maps to a page section. Nav links should scroll to the relevant anchor. CTA at each stage points to the Trial form (#section8).</div>
+    <div style="padding:0 16px 16px">
+      <div style="font-size:13px;font-weight:600;margin-bottom:10px;color:var(--color-text-primary)">Section anchors</div>
+      <table class="diff-table" style="margin:0">
+        <thead><tr><th>Section</th><th>Anchor ID</th><th>Nav label</th></tr></thead>
+        <tbody id="anchor-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="tab-form" class="tab-content">
+    <div style="font-size:13px;color:var(--color-text-secondary);padding:0 0 14px">From wireframe Section 8 — collect before manual scheduling.</div>
+    <div class="form-fields" id="form-fields"></div>
+  </div>
+
+  <div id="tab-global" class="tab-content">
+    <div id="global-list"></div>
+  </div>
+
+  <div id="tab-notes" class="tab-content">
+    <div id="custom-notes-list" class="custom-notes-list"></div>
+    <div class="custom-note-area">
+      <textarea id="custom-input" placeholder="Add your own note for the developer..."></textarea>
+      <div class="row">
+        <select id="custom-pri">
+          <option value="ph">Must fix</option>
+          <option value="pm" selected>Important</option>
+          <option value="pl">Nice to have</option>
+        </select>
+        <button class="add-btn" onclick="addCustomNote()">+ Add note</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const sections = [
+  {num:'01', title:'Hero', notes:[
+    {p:'ph', label:'Update headline', desc:'Wireframe: "Your Child Already Knows More Than They Think" (no sub-clause). Remove the italicised gold "They just need the right voice" line from prototype.', tags:['change']},
+    {p:'ph', label:'Update subheadline', desc:'Wireframe copy: "We help them express it clearly and confidently in English." — replace prototype subhead.', tags:['change']},
+    {p:'pm', label:'Support line', desc:'Add a second support line below subhead: "We take what students are already learning across subjects and help them communicate it effectively in English."', tags:['new']},
+    {p:'ph', label:'CTA buttons', desc:'Change to: "View Programs" (primary) and "Request a Trial Lesson" (secondary). Remove "Book a Free Trial" / "Learn How It Works" from prototype.', tags:['change']},
+    {p:'pm', label:'Trust line', desc:'Add small trust note below CTAs: "No commitment. Clear level assessment in first lesson."', tags:['new']},
+    {p:'pl', label:'"Accepting students" badge', desc:'Keep the gold badge from prototype — not in wireframe but adds credibility. Confirm with client.', tags:['keep']}
+  ]},
+  {num:'02', title:'How Lessons Work', notes:[
+    {p:'ph', label:'Replace 4-step method with 3-step process', desc:'Prototype has Steps 01–04 (Warm-Up, Core Exploration, Guided Practice, Reflection). Wireframe replaces with: (1) Calibrate the Right Level, (2) Build Confidence in Expression, (3) Expand Beyond the Lesson.', tags:['change']},
+    {p:'pm', label:'Section heading', desc:'Confirm new heading — wireframe does not specify one. Suggest: "How it works" or "The process". Remove "Structured, but never rigid." from prototype.', tags:['change']}
+  ]},
+  {num:'03', title:'Programs', notes:[
+    {p:'ph', label:'4 programs — not 3', desc:'Wireframe has: Group Classes, 1-1 Consultant, 1-1 with Jake (premium), IELTS Specialist. Prototype only has 3 tiers (Foundation, Development, Advanced). Rebuild the card grid as 4 items.', tags:['change']},
+    {p:'ph', label:'NO pricing on homepage', desc:'Wireframe explicit dev note: "No pricing on homepage". Remove all pricing references. Programs section links to dedicated program pages where pricing lives.', tags:['change']},
+    {p:'pm', label:'Social proof note', desc:'Add note: "most students continue after assessment" near Group Classes card.', tags:['new']},
+    {p:'pm', label:'"Most popular" badge', desc:'Prototype marks Development as most popular. In new layout, confirm which program gets the badge (likely Group Classes or 1-1 Consultant).', tags:['change']},
+    {p:'pl', label:'Program detail pages', desc:'Each card CTA links to a dedicated program page (not built yet). Placeholder href="#" for now. Dev should set up routing for /programs/group, /programs/consultant, /programs/jake, /programs/ielts.', tags:['new']}
+  ]},
+  {num:'04', title:'Packages (lesson bundles)', notes:[
+    {p:'ph', label:'New section — not in prototype', desc:'Wireframe adds a Packages section: 20 lessons (Starter), 30 lessons (Most Popular), 60 lessons (Best Value). Build as a 3-column card grid, same visual style as Programs.', tags:['new']},
+    {p:'ph', label:'No prices shown', desc:'Per wireframe dev note: pricing lives on program pages, not here. Show bundle names and relative value labels only.', tags:['new']},
+    {p:'pm', label:'CTA per package', desc:'Each package card should have a CTA that leads to the trial/enquiry form, not a purchase flow (manual scheduling model).', tags:['new']}
+  ]},
+  {num:'05', title:'Different Approach', notes:[
+    {p:'ph', label:'New differentiator section', desc:'Wireframe adds a "Different Approach" section focused on: Expression first, full sentences, confidence through speaking. Build as a 3-point value block. Copy TBD from client.', tags:['new']},
+    {p:'pm', label:'Visual treatment', desc:'Prototype has an About section with a large photo. This section is philosophy/method — consider text-forward layout with no photo required, or a subtle background texture.', tags:['new']}
+  ]},
+  {num:'06', title:'Reviews / Results', notes:[
+    {p:'pm', label:'Written testimonials', desc:'Keep 2-column testimonial cards from prototype. Huang (Father of Ryan) and Yang (Mother of Ethan) quotes — confirm full text.', tags:['keep']},
+    {p:'pm', label:'Video testimonials', desc:'Keep 3-video grid (Lin, Chen, Huang). Confirm embed URLs (YouTube/Vimeo). Each thumbnail needs a real photo + play icon overlay.', tags:['keep']},
+    {p:'pl', label:'Section heading', desc:'Wireframe just says "Reviews". Consider: "What parents say" or keep prototype "Hear from parents directly".', tags:['change']}
+  ]},
+  {num:'07', title:'Trial / Assessment CTA', notes:[
+    {p:'ph', label:'Reframe trial as assessment', desc:'Wireframe: "Trial used for assessment + placement". Change all CTA copy from "Book a free trial" to "Request a Trial Lesson" to set expectations correctly.', tags:['change']},
+    {p:'pm', label:'Section copy', desc:'Add context: the trial lesson is not just a free sample — it places the student in the right program. This should be explained in the section body.', tags:['new']}
+  ]},
+  {num:'08', title:'Enquiry Form', notes:[
+    {p:'ph', label:'New full-page form section', desc:'Wireframe specifies a form (Section 8) — not present in prototype. Build as a contained section with a clean card layout. See "Form" tab for all fields.', tags:['new']},
+    {p:'ph', label:'Manual scheduling — no payments', desc:'Wireframe dev note: "Manual scheduling". Form submits an enquiry; the teacher follows up. No payment gateway, no calendar embed required at launch.', tags:['new']},
+    {p:'pm', label:'Form submission', desc:'On submit: send to email (or a simple backend/Formspree/Netlify Forms). Show a thank-you message inline. No redirect.', tags:['func']},
+    {p:'pl', label:'GDPR note', desc:'Add a one-line consent note below the submit button, especially if targeting EU/UK families.', tags:['new']}
+  ]},
+  {num:'09', title:'About (Tutor)', notes:[
+    {p:'pm', label:'Keep About section from prototype', desc:'The 2-column photo + bio layout is strong. Keep stats (8+ years, 200+ students, 1-on-1). Update copy to match wireframe tone if client revises.', tags:['keep']},
+    {p:'ph', label:'Replace placeholder photo', desc:'Prototype shows a placeholder. Insert real tutor photo: tight headshot, neutral background, export as WebP 800×900px.', tags:['change']}
+  ]}
+];
+
+const diffs = [
+  ['Headline','Your child already knows more…\n+ italic gold line','Your Child Already Knows More Than They Think','Use wireframe — remove italic gold sub-clause'],
+  ['CTAs','Book a Free Trial / Learn How It Works','View Programs / Request a Trial Lesson','Use wireframe copy verbatim'],
+  ['Lesson steps','4 steps (Warm-Up → Reflection)','3 steps (Calibrate → Expand)','Use wireframe 3-step version'],
+  ['Programs','3 tiers: Foundation, Development, Advanced','4 programs: Group, 1-1 Consultant, 1-1 Jake, IELTS','Use wireframe — 4 program cards'],
+  ['Pricing','Not shown (implied price-on-enquiry)','Explicit: NO pricing on homepage','Confirm: pricing lives on /programs/* pages only'],
+  ['Packages section','Not present','20 / 30 / 60 lesson bundles','Build new section per wireframe'],
+  ['Different Approach section','Not present','Expression first, full sentences, speaking confidence','Build new section — copy from client'],
+  ['Enquiry form','Not present','Full form with 7+ fields','Build per wireframe — see Form tab'],
+  ['Trial framing','"Book a free trial"','Trial = assessment + placement','Update all CTAs to "Request a Trial Lesson"'],
+  ['FAQ','5 questions (no answers)','Not in wireframe','Keep FAQ — write answers before launch'],
+  ['About / Tutor section','Present with photo placeholder','Not explicitly in wireframe','Keep — strong trust element'],
+  ['Pricing schedule','Visible on homepage (implied)','Manual scheduling, no payments at launch','No payment gateway needed'],
+];
+
+const anchors = [
+  ['Hero','#hero','—'],
+  ['How it works','#how-it-works','Method'],
+  ['Programs','#programs','Programs'],
+  ['Packages','#packages','—'],
+  ['Different Approach','#approach','—'],
+  ['Reviews','#reviews','Results'],
+  ['Trial CTA','#trial','—'],
+  ['Enquiry Form','#contact','Book a Trial'],
+  ['About','#about','About'],
+];
+
+const formFields = [
+  {name:'Student name',type:'Text input'},
+  {name:'Student age',type:'Number / dropdown (6–18)'},
+  {name:'Current English level',type:'Dropdown: Beginner / Elementary / Intermediate / Upper-Intermediate / Advanced'},
+  {name:'Main goal',type:'Checkbox: Confidence / Academic / IELTS / Conversation / Other'},
+  {name:'Availability',type:'Checkboxes: days + time preferences'},
+  {name:'Speaking ability (self-assessed)',type:'Dropdown: 1–5 scale'},
+  {name:'Parent / guardian name',type:'Text input'},
+  {name:'Contact email',type:'Email input'},
+  {name:'Contact number',type:'Tel input (optional)'},
+  {name:'Any extra notes',type:'Textarea (optional)'},
+];
+
+const globalNotes = [
+  {p:'ph', label:'No pricing on homepage — enforced', desc:'Wireframe is explicit. Any price, "from" amount, or cost signal must be removed from the homepage. Pricing lives on individual program pages.'},
+  {p:'ph', label:'Manual scheduling — no booking widget', desc:'Do not embed Calendly, TidyCal, or any scheduling tool. The enquiry form feeds a manual follow-up by the tutor. A booking system can be added in a future phase.'},
+  {p:'ph', label:'Trial = assessment, not a free taster', desc:'All CTAs should say "Request a Trial Lesson". Avoid "free trial" language — the session has value as a level assessment.'},
+  {p:'pm', label:'Program pages are separate', desc:'Homepage program cards link to /programs/* sub-pages. These pages contain full detail and pricing. Build homepage cards with placeholder hrefs for now.'},
+  {p:'pm', label:'Gold colour token', desc:'Primary gold: #C9973A. Use consistently for: labels, stat numbers, badge dots, CTA backgrounds, active borders. Define as --color-gold in CSS.'},
+  {p:'pm', label:'Serif display font', desc:'Headlines use a serif (Cormorant Garamond or similar). Define as --font-display and apply to h1, h2, and the logo "Method" word only.'},
+  {p:'pm', label:'Dark hero, cream body', desc:'Hero section background: #13121F (near-black). All other sections: #F5F2EB (warm cream). Consistent split throughout.'},
+  {p:'pl', label:'Mobile-first breakpoints', desc:'Design is desktop-first in prototype. Ensure all grids stack to 1 column below 768px. Nav collapses to hamburger. Forms go full-width.'},
+];
+
+let customNotes = [];
+
+function renderSections(){
+  const el = document.getElementById('sections-list');
+  el.innerHTML='';
+  sections.forEach((s,i) => {
+    const card = document.createElement('div');
+    card.className='section-block';
+    const tagMap = {change:'t-change change',new:'t-new new',keep:'t-keep keep',func:'t-func func',remove:'t-remove remove'};
+    const tagLabel = {change:'CHANGED',new:'NEW',keep:'KEEP',func:'FUNCTIONAL',remove:'REMOVE'};
+    let notesHtml = s.notes.map(n => {
+      const tagsHtml = (n.tags||[]).map(t=>`<span class="tag ${tagMap[t]||''}">${tagLabel[t]||t}</span>`).join('');
+      return `<div class="note-row">
+        <div class="pri-dot ${n.p}"></div>
+        <div class="note-body">
+          <div class="note-label">${n.label}${tagsHtml}</div>
+          <div class="note-desc">${n.desc}</div>
+        </div>
+      </div>`;
+    }).join('');
+    card.innerHTML=`
+      <div class="sec-head" onclick="toggleSec(${i})">
+        <span class="sec-num">§ ${s.num}</span>
+        <span class="sec-title">${s.title}</span>
+        <span class="sec-tog" id="st${i}">+</span>
+      </div>
+      <div class="sec-body" id="sb${i}">${notesHtml}</div>`;
+    el.appendChild(card);
+  });
+}
+
+function toggleSec(i){
+  const b=document.getElementById('sb'+i);
+  const t=document.getElementById('st'+i);
+  const open=b.classList.toggle('open');
+  t.textContent=open?'−':'+';
+}
+
+function renderDiff(){
+  const el=document.getElementById('diff-body');
+  el.innerHTML=diffs.map(d=>`<tr>
+    <td style="font-weight:600">${d[0]}</td>
+    <td><span class="proto">${d[1]}</span></td>
+    <td><span class="wire">${d[2]}</span></td>
+    <td><span class="final">${d[3]}</span></td>
+  </tr>`).join('');
+}
+
+function renderFlow(){
+  const steps=['Land','Learn','Choose','Request','You decide'];
+  const el=document.getElementById('flow-steps');
+  steps.forEach((s,i)=>{
+    const div=document.createElement('div');
+    div.className='flow-step';
+    div.textContent=s;
+    el.appendChild(div);
+    if(i<steps.length-1){const a=document.createElement('div');a.className='flow-arrow';a.textContent='→';el.appendChild(a);}
+  });
+  const ab=document.getElementById('anchor-body');
+  ab.innerHTML=anchors.map(a=>`<tr><td>${a[0]}</td><td><code style="font-size:12px;background:var(--color-background-secondary);padding:2px 6px;border-radius:3px">${a[1]}</code></td><td>${a[2]}</td></tr>`).join('');
+}
+
+function renderForm(){
+  const el=document.getElementById('form-fields');
+  el.innerHTML=formFields.map(f=>`<div class="field-item"><div class="field-name">${f.name}</div><div class="field-type">${f.type}</div></div>`).join('');
+}
+
+function renderGlobal(){
+  const el=document.getElementById('global-list');
+  el.innerHTML=globalNotes.map(n=>`<div class="note-row" style="border-top:0.5px solid var(--color-border-tertiary);padding:14px 4px;display:flex;gap:12px;align-items:flex-start">
+    <div class="pri-dot ${n.p}" style="margin-top:4px"></div>
+    <div><div class="note-label">${n.label}</div><div class="note-desc">${n.desc}</div></div>
+  </div>`).join('');
+}
+
+function renderCustomNotes(){
+  const el=document.getElementById('custom-notes-list');
+  el.innerHTML=customNotes.length?customNotes.map((n,i)=>`<div class="custom-note-item">
+    <div class="pri-dot ${n.p}" style="margin-top:4px;flex-shrink:0"></div>
+    <div style="flex:1">${n.text}</div>
+    <button class="remove-btn" onclick="removeCustom(${i})">×</button>
+  </div>`).join(''):'<div style="padding:8px 0;font-size:13px;color:var(--color-text-secondary)">No custom notes yet. Add one below.</div>';
+}
+
+function addCustomNote(){
+  const txt=document.getElementById('custom-input').value.trim();
+  if(!txt)return;
+  customNotes.push({p:document.getElementById('custom-pri').value,text:txt});
+  document.getElementById('custom-input').value='';
+  renderCustomNotes();
+}
+
+function removeCustom(i){customNotes.splice(i,1);renderCustomNotes();}
+
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function exportBrief(){
+  let out='THE GOLDEN METHOD — DEVELOPER BRIEF\n';
+  out+='Cross-referenced: Wireframe v1 + Qwen Prototype\n';
+  out+='='.repeat(50)+'\n\n';
+  out+='PRIORITY KEY: [MUST FIX] [IMPORTANT] [NICE TO HAVE]\n\n';
+  sections.forEach(s=>{
+    out+=`SECTION ${s.num}: ${s.title.toUpperCase()}\n${'-'.repeat(40)}\n`;
+    s.notes.forEach(n=>{
+      const p=n.p==='ph'?'[MUST FIX]':n.p==='pm'?'[IMPORTANT]':'[NICE]';
+      out+=`${p} ${n.label} [${(n.tags||[]).join(',')}]\n  ${n.desc}\n\n`;
+    });
+  });
+  out+='\nWIREFRAME vs PROTOTYPE DIFFERENCES\n'+'-'.repeat(40)+'\n';
+  diffs.forEach(d=>out+=`${d[0]}\n  Prototype: ${d[1]}\n  Wireframe: ${d[2]}\n  Use: ${d[3]}\n\n`);
+  out+='\nGLOBAL RULES\n'+'-'.repeat(40)+'\n';
+  globalNotes.forEach(n=>out+=`${n.label}\n  ${n.desc}\n\n`);
+  out+='\nENQUIRY FORM FIELDS\n'+'-'.repeat(40)+'\n';
+  formFields.forEach(f=>out+=`- ${f.name}: ${f.type}\n`);
+  if(customNotes.length){out+='\n\nMY NOTES\n'+'-'.repeat(40)+'\n';customNotes.forEach(n=>out+=`- ${n.text}\n`);}
+  const blob=new Blob([out],{type:'text/plain'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='golden-method-dev-brief.txt';
+  a.click();
+}
+
+renderSections();
+renderDiff();
+renderFlow();
+renderForm();
+renderGlobal();
+renderCustomNotes();
+</script>
