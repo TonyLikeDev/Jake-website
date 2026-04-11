@@ -55,6 +55,7 @@ h1, h2, h3, h4 {
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
 
 /* Navigation */
 nav {
@@ -515,96 +516,6 @@ section { padding: 120px 0; }
     background: var(--gold-light);
 }
 
-/* Packages */
-.packages-section { background: var(--white); }
-.packages-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-top: 64px;
-}
-.package-card {
-    background: var(--cream);
-    padding: 48px 36px;
-    border: 1px solid rgba(0,0,0,0.04);
-    position: relative;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    display: flex;
-    flex-direction: column;
-}
-.package-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.06);
-}
-.package-card.featured {
-    background: var(--dark);
-    border-color: transparent;
-}
-.package-card.featured .package-name,
-.package-card.featured .package-desc,
-.package-card.featured .package-lessons {
-    color: var(--white);
-}
-.package-card.featured .package-desc { color: rgba(255,255,255,0.6); }
-.package-badge {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: var(--gold);
-    color: var(--dark);
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    font-weight: 500;
-}
-.package-lessons {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: var(--dark);
-    margin-bottom: 8px;
-}
-.package-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    color: var(--dark);
-    margin-bottom: 12px;
-}
-.package-desc {
-    font-size: 0.88rem;
-    color: var(--text-light);
-    margin-bottom: 32px;
-    line-height: 1.7;
-    flex-grow: 1;
-}
-.package-cta {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 14px;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    background: transparent;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-}
-.package-cta:hover {
-    background: var(--gold);
-    color: var(--dark);
-}
-.package-card.featured .package-cta {
-    background: var(--gold);
-    color: var(--dark);
-}
-.package-card.featured .package-cta:hover {
-    background: var(--gold-light);
-}
-
 /* Different Approach */
 .approach-section { background: var(--cream); }
 .approach-grid {
@@ -1055,36 +966,31 @@ section { padding: 120px 0; }
     accent-color: var(--gold);
 }
 
-.day-circles {
+.day-checkboxes {
     display: flex;
-    gap: 12px;
     flex-wrap: wrap;
+    gap: 8px;
 }
-.day-circle {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(0,0,0,0.1);
-    background: var(--cream);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: var(--text);
-    cursor: pointer;
-    transition: all 0.25s;
-    display: flex;
+.day-checkbox-item {
+    display: flex !important;
     align-items: center;
-    justify-content: center;
-    padding: 0;
-    line-height: 1;
+    cursor: pointer;
+    font-weight: 300 !important;
+    margin-bottom: 0 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    font-size: 0.88rem !important;
+    color: var(--text-light) !important;
 }
-.day-circle:hover {
-    border-color: var(--gold);
-    color: var(--gold);
+.day-checkbox-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+    accent-color: var(--gold);
+    cursor: pointer;
 }
-.day-circle.selected {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--dark);
+.day-checkbox-item span {
+    font-size: 0.88rem;
+    color: var(--text-light);
 }
 
 .enquiry-form textarea { resize: vertical; min-height: 80px; }
@@ -1232,7 +1138,6 @@ footer {
     .method-grid { grid-template-columns: repeat(2, 1fr); }
     .programs-grid { grid-template-columns: repeat(2, 1fr); }
     .programs-grid-4 { grid-template-columns: repeat(2, 1fr); }
-    .packages-grid { grid-template-columns: repeat(2, 1fr); }
     .approach-grid { grid-template-columns: repeat(2, 1fr); }
     .about-grid { gap: 48px; }
     .enquiry-grid { gap: 48px; }
@@ -1245,7 +1150,6 @@ footer {
     .method-grid { grid-template-columns: 1fr; }
     .programs-grid,
     .programs-grid-4 { grid-template-columns: 1fr; }
-    .packages-grid { grid-template-columns: 1fr; }
     .approach-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .about-image { aspect-ratio: 4/3; }

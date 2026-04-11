@@ -78,8 +78,8 @@
                     Focus on communication, not memorization
                 </div>
                 <div class="trust-item reveal reveal-delay-2">
-                    <strong>Full Sentences</strong>
-                    Always speaking, always building confidence
+                    <strong>Individual Focus</strong>
+                    Individual focus, always
                 </div>
                 <div class="trust-item reveal reveal-delay-3">
                     <strong>20+ Years</strong>
@@ -141,6 +141,7 @@
                     <a href="#" class="program-cta">Learn More</a>
                 </div>
                 <div class="program-card reveal reveal-delay-2">
+                    <div class="program-badge" style="background: rgba(201,151,58,0.15); color: var(--gold);">Limited Availability</div>
                     <div class="program-age">Premium</div>
                     <h3 class="program-name">1-on-1 with Jake</h3>
                     <p class="program-desc">Premium tier with Jake as your dedicated tutor. Extended session time, priority scheduling, and the most intensive personalization available.</p>
@@ -149,7 +150,7 @@
                 <div class="program-card reveal reveal-delay-3">
                     <div class="program-age">Specialist</div>
                     <h3 class="program-name">IELTS Specialist</h3>
-                    <p class="program-desc">Focused preparation for IELTS Academic and General Training. Covers all four skills with exam strategies, timed practice, and mock assessments.</p>
+                    <p class="program-desc">Score-focused preparation for IELTS Academic and General Training. Covers all four skills with exam strategies, timed practice, and mock assessments.</p>
                     <a href="#" class="program-cta">Learn More</a>
                 </div>
             </div>
@@ -203,6 +204,7 @@
                     <p class="reveal reveal-delay-2">Most tutoring systems treat students like empty vessels waiting to be filled with vocabulary and grammar rules. We take a different approach.</p>
                     <p class="reveal reveal-delay-3">Your child already has thoughts, opinions, stories, and knowledge. They understand more than they think—they just haven't been given the right framework to express it in English.</p>
                     <p class="reveal reveal-delay-4">Our job isn't to fill gaps. It's to unlock what's already there. Through patient, personalized sessions, we help students build the confidence to think and speak naturally in English—not because they memorized, but because they understand.</p>
+                    <p class="reveal reveal-delay-4">Our team includes dedicated IELTS and TOEFL specialists, so whatever your child's goal, we have the expertise to guide them.</p>
                     <div class="about-stats reveal">
                         <div>
                             <span class="about-stat-num">20+</span>
@@ -448,28 +450,26 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label>Student Availability (Dates)</label>
-                                <div class="day-circles">
-                                    <button type="button" class="day-circle" data-day="2">2</button>
-                                    <button type="button" class="day-circle" data-day="3">3</button>
-                                    <button type="button" class="day-circle" data-day="4">4</button>
-                                    <button type="button" class="day-circle" data-day="5">5</button>
-                                    <button type="button" class="day-circle" data-day="6">6</button>
-                                    <button type="button" class="day-circle" data-day="7">7</button>
-                                    <button type="button" class="day-circle" data-day="S">S</button>
+                                <label>Available Days</label>
+                                <div class="day-checkboxes">
+                                    <label class="day-checkbox-item"><input type="checkbox" name="day" value="Monday" onchange="updateAvailability()"><span>Mon</span></label>
+                                    <label class="day-checkbox-item"><input type="checkbox" name="day" value="Tuesday" onchange="updateAvailability()"><span>Tue</span></label>
+                                    <label class="day-checkbox-item"><input type="checkbox" name="day" value="Wednesday" onchange="updateAvailability()"><span>Wed</span></label>
+                                    <label class="day-checkbox-item"><input type="checkbox" name="day" value="Thursday" onchange="updateAvailability()"><span>Thu</span></label>
+                                    <label class="day-checkbox-item"><input type="checkbox" name="day" value="Friday" onchange="updateAvailability()"><span>Fri</span></label>
+                                    <label class="day-checkbox-item"><input type="checkbox" name="day" value="Saturday" onchange="updateAvailability()"><span>Sat</span></label>
+                                    <label class="day-checkbox-item"><input type="checkbox" name="day" value="Sunday" onchange="updateAvailability()"><span>Sun</span></label>
                                 </div>
                                 <input type="hidden" name="availability" id="availabilityInput">
                             </div>
                             <div class="form-group">
-                                <label>Speaking Ability (1–5)</label>
+                                <label>Preferred Time</label>
                                 <div class="select-wrapper">
-                                    <select>
-                                        <option value="" disabled selected>Self-assessed</option>
-                                        <option value="1">1 — Very basic</option>
-                                        <option value="2">2 — Limited</option>
-                                        <option value="3">3 — Conversational</option>
-                                        <option value="4">4 — Confident</option>
-                                        <option value="5">5 — Fluent</option>
+                                    <select name="preferredTime" id="preferredTimeSelect">
+                                        <option value="" disabled selected>Select time</option>
+                                        <option value="morning">Morning</option>
+                                        <option value="afternoon">Afternoon</option>
+                                        <option value="evening">Evening</option>
                                     </select>
                                 </div>
                             </div>
@@ -539,7 +539,7 @@
         <div class="container">
             <div class="reveal">
                 <span class="section-label">Parent FAQ</span>
-                <h2 class="section-title">Questions parents ask before starting.</h2>
+                <h2 class="section-title">Some questions parents ask before starting.</h2>
             </div>
             <div class="faq-list">
                 <div class="faq-item reveal">
@@ -587,7 +587,7 @@
                         <p>Pricing varies by program and session frequency. We're happy to share detailed pricing during the trial consultation. We understand this is a significant commitment, which is why we offer a trial lesson first—so you can experience the method before making any financial decision.</p>
                     </div>
                 </div>
-                <div class="faq-item reveal">
+                <div class="faq-item reveal reveal-delay-5">
                     <button class="faq-question" onclick="toggleFaq(this)">
                         <h4>How do I track my child's progress?</h4>
                         <div class="faq-icon"></div>

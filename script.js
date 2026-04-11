@@ -87,14 +87,11 @@ document.addEventListener('click', (e) => {
     });
 });
 
-// Day circle toggle for availability
-document.querySelectorAll('.day-circle').forEach(btn => {
-    btn.addEventListener('click', () => {
-        btn.classList.toggle('selected');
-        const selected = [...document.querySelectorAll('.day-circle.selected')].map(b => b.dataset.day);
-        document.getElementById('availabilityInput').value = selected.join(', ');
-    });
-});
+// Day checkbox availability update
+function updateAvailability() {
+    const selected = [...document.querySelectorAll('input[name="day"]:checked')].map(cb => cb.value);
+    document.getElementById('availabilityInput').value = selected.join(', ');
+}
 
 // Form submission handler
 function handleSubmit(e) {
@@ -111,7 +108,6 @@ function handleSubmit(e) {
         btn.style.color = '';
         btn.disabled = false;
         e.target.reset();
-        document.querySelectorAll('.day-circle.selected').forEach(b => b.classList.remove('selected'));
         document.querySelectorAll('.enquiry-form select').forEach(s => s.classList.add('placeholder-shown'));
     }, 3000);
 }
