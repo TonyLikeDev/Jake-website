@@ -10,7 +10,7 @@ export default function AboutSection() {
       <div className="container">
         <div className="about-grid">
           <div className="about-image reveal">
-            <img src="img/about.jpg" alt="The Golden Method Tutor" loading="lazy" width="1200" height="800" />
+            <img src="public/img/about.jpg" alt="The Golden Method Tutor" loading="lazy" width="1200" height="800" />
           </div>
           <div className="about-content">
             <span className="section-label reveal">About</span>
