@@ -4,7 +4,7 @@ import useReveal from '../hooks/useReveal'
 
 export default function Hero() {
   useReveal()
- 
+
   return (
     <section className="hero" id="hero">
       <div className="container">
@@ -13,12 +13,12 @@ export default function Hero() {
             <div className="hero-badge-dot"></div>
             <span>Accepting Students for 2026</span>
           </div>
-          <h1 className="reveal reveal-delay-1">Students Already Know More Than They Think.</h1>
-          <p className="hero-desc reveal reveal-delay-2"><em>We help them express it clearly and confidently in English.</em></p>
-          <p className="hero-support reveal reveal-delay-2">Most students don't struggle with understanding — they struggle with expression.</p>
+          <h1 className="reveal reveal-delay-1">Students Know More Than They Can <em>Express</em>.</h1>
+          <p className="hero-desc reveal reveal-delay-2">Most just haven&apos;t been taught how to communicate it clearly in English.</p>
+          <p className="hero-support reveal reveal-delay-2">We help students turn understanding into confident expression through structured, personalized lessons.</p>
           <div className="hero-actions reveal reveal-delay-3">
-            <a href="#programs" className="btn-primary">View Programs</a>
-            <a href="#contact" className="btn-secondary">Request a Trial Lesson</a>
+            <a href="#contact" className="btn-primary">Book a Trial Lesson</a>
+            <a href="#how-it-works" className="btn-secondary">See How It Works</a>
           </div>
         </div>
       </div>
