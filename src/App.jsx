@@ -19,8 +19,10 @@ export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [programModal, setProgramModal] = useState(null)
   const [videoModal, setVideoModal] = useState(null)
+  const [lang, setLang] = useState('en')
 
   const toggleMobile = useCallback(() => setMobileOpen(p => !p), [])
+  const toggleLang = useCallback(() => setLang(p => p === 'en' ? 'zh' : 'en'), [])
   const openProgram = useCallback((key) => setProgramModal(key), [])
   const closeProgram = useCallback(() => setProgramModal(null), [])
   const openVideo = useCallback((text) => setVideoModal(text), [])
@@ -28,7 +30,7 @@ export default function App() {
 
   return (
     <>
-      <Navbar onToggleMobile={toggleMobile} />
+      <Navbar onToggleMobile={toggleMobile} onToggleLang={toggleLang} lang={lang} />
       <MobileMenu isOpen={mobileOpen} onToggleMobile={toggleMobile} />
       <Hero />
       <TrustBar />

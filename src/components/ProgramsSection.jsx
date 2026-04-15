@@ -14,15 +14,15 @@ export default function ProgramsSection({ onOpenProgram }) {
           <p className="section-desc">Every program is personalized to your child's level and goals. Choose the format that works best for your family.</p>
         </div>
         <div className="programs-grid programs-grid-4">
-          <div className="program-card reveal">
+          <div className="program-card featured reveal">
+            <div className="program-badge">Most Popular</div>
             <div className="program-age">Group</div>
             <h3 className="program-name">Group Classes</h3>
             <p className="program-desc">Small-group sessions (max 4 students) focused on conversation, comprehension, and confidence-building. Great introduction before committing to 1-on-1.</p>
-            <p className="program-note">Most students continue after assessment</p>
+            <p className="program-note">After assessment, most students continue with a mix of group lessons and 1-1</p>
             <button className="program-cta" onClick={() => onOpenProgram('group')}>Learn More</button>
           </div>
-          <div className="program-card featured reveal reveal-delay-1">
-            <div className="program-badge">Most Popular</div>
+          <div className="program-card reveal reveal-delay-1">
             <div className="program-age">Individual</div>
             <h3 className="program-name">1-on-1 Consultant</h3>
             <p className="program-desc">Fully personalized 1-on-1 sessions tailored to your child's pace, interests, and goals. The core of the Golden Method—expression-first learning with real-time feedback.</p>

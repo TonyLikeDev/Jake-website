@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Navbar({ onToggleMobile }) {
+export default function Navbar({ onToggleMobile, onToggleLang, lang }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -14,6 +14,13 @@ export default function Navbar({ onToggleMobile }) {
       <div className="nav-inner">
         <a href="#" className="nav-logo">The Golden <span>Method</span></a>
         <ul className="nav-links">
+          <li>
+            <button className="nav-lang-toggle" onClick={onToggleLang}>
+              <span className={`lang-text ${lang === 'zh' ? 'active' : ''}`}>中</span>
+              <span className={`lang-thumb ${lang === 'zh' ? 'left' : 'right'}`}></span>
+              <span className={`lang-text ${lang === 'en' ? 'active' : ''}`}>EN</span>
+            </button>
+          </li>
           <li><a href="#how-it-works">Method</a></li>
           <li><a href="#programs">Programs</a></li>
           <li><a href="#about">About</a></li>

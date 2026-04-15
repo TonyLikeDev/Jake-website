@@ -16,18 +16,18 @@ export default function MethodSection() {
         <div className="method-grid">
           <div className="method-card reveal">
             <div className="method-num">01</div>
-            <h3>Calibrate the Right Level</h3>
-            <p>We begin with a clear assessment—understanding exactly where your child is now. Not what they've memorized, but what they can genuinely express. This sets the foundation for everything that follows.</p>
+            <h3>We Find Out Where Your Child Is</h3>
+            <p>In the first lesson, we see exactly what your child can and cannot say in English. No tests. Just a real conversation.</p>
           </div>
           <div className="method-card reveal reveal-delay-1">
             <div className="method-num">02</div>
-            <h3>Build Confidence in Expression</h3>
-            <p>Focus on full sentences, reinforce effort, refine accuracy. Through structured, personalized sessions, your child practices speaking about topics they already understand—building natural, confident communication.</p>
+            <h3>We Help Them Speak Clearly</h3>
+            <p>Every lesson, your child practises speaking in full sentences about things they already understand. We correct them gently, not harshly.</p>
           </div>
           <div className="method-card reveal reveal-delay-2">
             <div className="method-num">03</div>
-            <h3>Expand Beyond the Lesson</h3>
-            <p>As confidence grows, we push further—introducing new topics, deeper discussions, and more sophisticated vocabulary. Your child doesn't just learn English; they start living in it.</p>
+            <h3>They Keep Getting Better Outside Class</h3>
+            <p>As your child grows, we introduce bigger topics and harder ideas. Their English improves - not just in lessons, but everywhere.</p>
           </div>
         </div>
       </div>

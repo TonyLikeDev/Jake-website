@@ -105,6 +105,47 @@ nav.scrolled {
     transition: color 0.3s;
 }
 .nav-links a:hover { color: var(--gold); }
+.nav-lang-toggle {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--gold);
+    padding: 2px;
+    border-radius: 4px;
+    position: relative;
+    width: 76px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.nav-lang-toggle .lang-text {
+    flex: 1;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 2;
+    color: rgba(255,255,255,0.4);
+    transition: color 0.3s;
+    line-height: 28px;
+}
+.nav-lang-toggle .lang-text.active {
+    color: var(--dark);
+}
+.nav-lang-toggle .lang-thumb {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    width: calc(50% - 2px);
+    background: var(--gold);
+    border-radius: 3px;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 1;
+}
+.nav-lang-toggle .lang-thumb.left { transform: translateX(0); }
+.nav-lang-toggle .lang-thumb.right { transform: translateX(36px); }
 .nav-cta {
     background: transparent;
     border: 1px solid var(--gold);
