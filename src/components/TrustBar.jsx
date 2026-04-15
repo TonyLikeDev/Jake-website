@@ -19,7 +19,7 @@ export default function TrustBar() {
           </div>
           <div className="trust-item reveal reveal-delay-2">
             <strong>Individual Focus</strong>
-            Individual focus, always
+            Individual focus, even in Groups
           </div>
           <div className="trust-item reveal reveal-delay-3">
             <strong>20+ Years</strong>

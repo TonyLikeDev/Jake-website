@@ -18,7 +18,7 @@ export default function ProgramsSection({ onOpenProgram }) {
             <div className="program-badge">Most Popular</div>
             <div className="program-age">Group</div>
             <h3 className="program-name">Group Classes</h3>
-            <p className="program-desc">Small-group sessions (max 4 students) focused on conversation, comprehension, and confidence-building. Great introduction before committing to 1-on-1.</p>
+            <p className="program-desc">Small-group sessions (max 4 students) focused on conversation, comprehension, and confidence-building.</p>
             <p className="program-note">After assessment, most students continue with a mix of group lessons and 1-1</p>
             <button className="program-cta" onClick={() => onOpenProgram('group')}>Learn More</button>
           </div>
