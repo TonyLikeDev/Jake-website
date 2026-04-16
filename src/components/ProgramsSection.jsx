@@ -11,7 +11,7 @@ export default function ProgramsSection({ onOpenProgram }) {
         <div className="reveal">
           <span className="section-label">Programs</span>
           <h2 className="section-title">Four programs. One commitment.</h2>
-          <p className="section-desc">Every program is personalized to your child's level and goals. Choose the format that works best for your family.</p>
+          <p className="section-desc">Every program is personalized to the student's level and goals. Choose the format that works best for your family.</p>
         </div>
         <div className="programs-grid programs-grid-4">
           <div className="program-card featured reveal">
@@ -25,7 +25,7 @@ export default function ProgramsSection({ onOpenProgram }) {
           <div className="program-card reveal reveal-delay-1">
             <div className="program-age">Individual</div>
             <h3 className="program-name">1-on-1 Consultant</h3>
-            <p className="program-desc">Fully personalized 1-on-1 sessions tailored to your child's pace, interests, and goals. The core of the Golden Method—expression-first learning with real-time feedback.</p>
+            <p className="program-desc">Fully personalized 1-on-1 sessions tailored to the student's pace, interests, and goals. The core of the Golden Method—expression-first learning with real-time feedback.</p>
             <button className="program-cta" onClick={() => onOpenProgram('consultant')}>Learn More</button>
           </div>
           <div className="program-card reveal reveal-delay-2">

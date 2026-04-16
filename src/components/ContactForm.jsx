@@ -23,8 +23,8 @@ export default function ContactForm() {
         <div className="enquiry-grid">
           <div className="enquiry-info reveal">
             <span className="section-label">Get Started</span>
-            <h2 className="section-title">Let's find the right fit for your child.</h2>
-            <p className="section-desc">Fill out the form and we'll get back to you within 24 hours to discuss your child's needs and schedule a trial lesson.</p>
+            <h2 className="section-title">Let's find the right fit for the student.</h2>
+            <p className="section-desc">Fill out the form and we'll get back to you within 24 hours to discuss the student's needs and schedule a trial lesson.</p>
             <div className="enquiry-benefits">
               <div className="enquiry-benefit">
                 <span className="benefit-check">✓</span>
@@ -153,7 +153,7 @@ export default function ContactForm() {
               </div>
               <div className="form-group">
                 <label>Any Extra Notes <span style={{ color: 'var(--text-light)', fontWeight: 300 }}>(optional)</span></label>
-                <textarea placeholder="Tell us anything else about your child's needs..." rows="3"></textarea>
+                <textarea placeholder="Tell us anything else about the student's needs..." rows="3"></textarea>
               </div>
               <button type="submit" className="form-submit" style={submitted ? { background: '#2d7a4f', color: '#fff' } : {}}>
                 {submitted ? 'Request Sent ✓' : 'Request a Trial Lesson'}

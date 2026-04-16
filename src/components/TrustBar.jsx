@@ -22,8 +22,8 @@ export default function TrustBar() {
             Individual focus, even in Groups
           </div>
           <div className="trust-item reveal reveal-delay-3">
-            <strong>20+ Years</strong>
-            Combined team experience
+            <strong>10+ Years</strong>
+            Years experience for each consultant
           </div>
         </div>
       </div>
