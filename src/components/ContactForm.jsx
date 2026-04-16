@@ -23,8 +23,8 @@ export default function ContactForm() {
         <div className="enquiry-grid">
           <div className="enquiry-info reveal">
             <span className="section-label">Get Started</span>
-            <h2 className="section-title">Let us find the right fit for you or your child</h2>
-            <p className="section-desc">Fill out the form and we'll get back to you within 24 hours to discuss needs and schedule a trial appointment.</p>
+            <h2 className="section-title">Let’s Find the Right Starting Point</h2>
+            <p className="section-desc">Every student begins with a guided assessment so we can place them accurately and build a clear path forward.</p>
             <div className="enquiry-benefits">
               <div className="enquiry-benefit">
                 <span className="benefit-check">✓</span>

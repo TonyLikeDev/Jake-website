@@ -26,8 +26,8 @@ export default function MethodSection() {
           </div>
           <div className="method-card reveal reveal-delay-2">
             <div className="method-num">03</div>
-            <h3>They Keep Getting Better Outside Class</h3>
-            <p>As the student grows, we introduce bigger topics and harder ideas. Their English improves - not just in lessons, but everywhere.</p>
+            <h3>Progress Doesn’t Stop After the Session</h3>
+            <p>As learners grow, they take on more complex ideas and express them with increasing clarity. English improves not just during sessions, but in how they think, speak, and respond.</p>
           </div>
         </div>
       </div>
