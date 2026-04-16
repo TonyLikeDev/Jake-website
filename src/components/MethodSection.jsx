@@ -17,12 +17,12 @@ export default function MethodSection() {
           <div className="method-card reveal">
             <div className="method-num">01</div>
             <h3>We Find Out Where The Student Is</h3>
-            <p>In the first lesson, we see exactly what the student can and cannot say in English. No tests. Just a real conversation.</p>
+            <p>In the first lesson, we see exactly what students can and cannot say in English. No tests. Just a real conversation.</p>
           </div>
           <div className="method-card reveal reveal-delay-1">
             <div className="method-num">02</div>
             <h3>We Help Them Speak Clearly</h3>
-            <p>Every lesson, the student practises speaking in full sentences about things they already understand. We correct them gently, not harshly.</p>
+            <p>Every lesson, students practises speaking in full sentences about things they already understand. We correct them gently, not harshly.</p>
           </div>
           <div className="method-card reveal reveal-delay-2">
             <div className="method-num">03</div>
