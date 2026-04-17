@@ -10,7 +10,7 @@ export default function ApproachSection() {
       <div className="container">
         <div className="reveal">
           <span className="section-label">What Makes This Different</span>
-          <h2 className="section-title">Students Already Knows. We Help Them Show It.</h2>
+          <h2 className="section-title">Students Already Know. We Help Them Show It.</h2>
           <p className="section-desc">We don't start with vocabulary lists or drills. We start with what the student already knows and help them say it clearly in English.</p>
         </div>
         <div className="approach-grid">
@@ -18,7 +18,7 @@ export default function ApproachSection() {
             <div className="approach-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
-            <h3>Students Knows More Than They Can Say</h3>
+            <h3>Students Know More Than They Can Say</h3>
             <p>They already have ideas, opinions, and understanding. The problem isn't knowledge - they just need help getting it out in English. That's exactly what we do.</p>
           </div>
           <div className="approach-card reveal reveal-delay-1">
