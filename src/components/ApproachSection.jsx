@@ -10,7 +10,7 @@ export default function ApproachSection() {
       <div className="container">
         <div className="reveal">
           <span className="section-label">What Makes This Different</span>
-          <h2 className="section-title">The Student Already Knows. We Help Them Show It.</h2>
+          <h2 className="section-title">Students Already Knows. We Help Them Show It.</h2>
           <p className="section-desc">We don't start with vocabulary lists or drills. We start with what the student already knows and help them say it clearly in English.</p>
         </div>
         <div className="approach-grid">
