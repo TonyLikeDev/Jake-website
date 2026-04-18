@@ -25,7 +25,7 @@ export default function ProgramsSection({ onOpenProgram }) {
           <div className="program-card reveal reveal-delay-1">
             <div className="program-age">INDIVIDUAL</div>
             <h3 className="program-name">1-on-1 Consultant</h3>
-            <p className="program-desc">Fully personalised. Real-time feedback. The core of the Golden Method—expression-first learning with immediate guidance.</p>
+            <p className="program-desc">Fully personalised. Real-time feedback. The core of the Golden Method is expression-first learning with immediate guidance.</p>
             <button className="program-cta" onClick={() => onOpenProgram('consultant')}>Learn More</button>
           </div>
           <div className="program-card reveal reveal-delay-2">
