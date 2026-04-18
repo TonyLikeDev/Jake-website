@@ -2,12 +2,12 @@ import { useState } from 'react'
 
 
 const reviews = [
-  { id: 1, category: '1on1', text: '"My son went from being terrified to speak English to raising his hand in class within 4 months. The change wasn\'t overnight—it was steady, and that\'s what made it real. He actually looks forward to his sessions."', avatar: 'L', name: 'Lin', meta: 'Mother of Leo, age 8 · 6 months in' },
-  { id: 2, category: '1on1', text: '"What impressed me most is that my daughter now argues with me in English. She\'s not translating anymore—she\'s thinking in it. That\'s the difference between this and every other tutoring we tried."', avatar: 'C', name: 'Chen', meta: 'Father of Sophie, age 12 · 1 year in' },
-  { id: 3, category: '1on1', text: '"Other tutors gave him worksheets. Here, they discuss real topics—science, culture, current events. His English improved, but so did his confidence and critical thinking. Worth every penny."', avatar: 'W', name: 'Wang', meta: 'Mother of Daniel, age 11 · 8 months in' },
-  { id: 4, category: 'group', text: '"I was skeptical at first because my daughter refused to speak English at home after other tutors. Here, she started singing English songs to herself. The pressure-free environment made all the difference."', avatar: 'Z', name: 'Zhang', meta: 'Mother of Mia, age 7 · 3 months in' },
-  { id: 5, category: '1on1', text: '"My son participated in an English debate competition last month. He didn\'t win, but he spoke for 3 minutes without hesitation. A year ago, he couldn\'t say two sentences. The progress speaks for itself."', avatar: 'H', name: 'Huang', meta: 'Father of Ryan, age 13 · 10 months in' },
-  { id: 6, category: '1on1', text: '"The monthly reports are what sold me. I always know exactly what we\'re working on, where he\'s improving, and what to practice at home. It\'s professional, intentional, and transparent."', avatar: 'Y', name: 'Yang', meta: 'Mother of Ethan, age 9 · 5 months in' }
+  { id: 1, category: '1on1', text: '"My son went from being terrified to speak English to raising his hand in every session within 4 months. The change wasn\'t overnight—it was steady, and that\'s what made it real. He actually looks forward to his sessions."', avatar: 'L', name: 'Lin', meta: 'Leo, age 8 · 6 months in' },
+  { id: 2, category: '1on1', text: '"What impressed me most is that my daughter now argues with me in English. She\'s not translating anymore—she\'s thinking in it. That\'s the difference between this and every other service we tried."', avatar: 'C', name: 'Chen', meta: 'Sophie, age 12 · 1 year in' },
+  { id: 3, category: '1on1', text: '"Other consultants gave him worksheets. Here, they discuss real topics—science, culture, current events. His English improved, but so did his confidence and critical thinking. Worth every penny."', avatar: 'W', name: 'Wang', meta: 'Daniel, age 11 · 8 months in' },
+  { id: 4, category: 'group', text: '"I was skeptical at first because my daughter refused to speak English at home after other tutors. Here, she started singing English songs to herself. The pressure-free environment made all the difference."', avatar: 'Z', name: 'Zhang', meta: 'Mia, age 7 · 3 months in' },
+  { id: 5, category: '1on1', text: '"My son participated in an English debate competition last month. He didn\'t win, but he spoke for 3 minutes without hesitation. A year ago, he couldn\'t say two sentences. The progress speaks for itself."', avatar: 'H', name: 'Huang', meta: 'Ryan, age 13 · 10 months in' },
+  { id: 6, category: '1on1', text: '"The monthly reports are what sold me. I always know exactly what we\'re working on, where he\'s improving, and what to practice at home. It\'s professional, intentional, and transparent."', avatar: 'Y', name: 'Yang', meta: 'Ethan, age 9 · 5 months in' }
 ]
 
 const videoTestimonials = [
@@ -25,7 +25,7 @@ export default function ReviewsSection({ onOpenVideo }) {
 
   const tabs = [
     { key: 'all', label: 'All' },
-    { key: 'group', label: 'Group Classes' },
+    { key: 'group', label: 'Group Sessions' },
     { key: '1on1', label: '1-on-1' },
     { key: 'ielts', label: 'IELTS' }
   ]
@@ -36,8 +36,8 @@ export default function ReviewsSection({ onOpenVideo }) {
     <section className="reviews-section" id="reviews">
       <div className="container">
         <div className="reveal">
-          <span className="section-label">What Parents Say</span>
-          <h2 className="section-title">Real feedback from real families.</h2>
+          <span className="section-label">WHAT CLIENTS SAY</span>
+          <h2 className="section-title">Real feedback from people who've gone through the process.</h2>
           <p className="section-desc">No cherry-picked one-liners. Real feedback from families who've committed to the process.</p>
         </div>
 
@@ -70,7 +70,7 @@ export default function ReviewsSection({ onOpenVideo }) {
         </div>
 
         <div style={{ marginTop: 64 }}>
-          <h3 className="section-title reveal" style={{ fontSize: '1.6rem' }}>Hear from parents directly</h3>
+          <h3 className="section-title reveal" style={{ fontSize: '1.6rem' }}>Hear from clients directly</h3>
           <p className="section-desc reveal" style={{ marginBottom: 32 }}>Short video testimonials from families who've seen the transformation.</p>
           <div className="review-video-cards">
             {videoTestimonials.map((v, i) => (

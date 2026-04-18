@@ -21,7 +21,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom reveal">
           <span className="footer-copy">© 2026 The Golden Method. All rights reserved.</span>
-          <span className="footer-copy">Premium English Tutoring — Expression First</span>
+          <span className="footer-copy">Premium English Consulting — Expression First</span>
         </div>
       </div>
     </footer>

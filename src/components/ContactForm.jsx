@@ -23,12 +23,12 @@ export default function ContactForm() {
         <div className="enquiry-grid">
           <div className="enquiry-info reveal">
             <span className="section-label">Get Started</span>
-            <h2 className="section-title">Let’s Find the Right Starting Point</h2>
-            <p className="section-desc">Every student begins with a guided assessment so we can place them accurately and build a clear path forward.</p>
+            <h2 className="section-title">Start With an Assessment</h2>
+            <p className="section-desc">This first session helps us understand your level, identify strengths, and recommend the right path forward.</p>
             <div className="enquiry-benefits">
               <div className="enquiry-benefit">
                 <span className="benefit-check">✓</span>
-                <span>Free level assessment in your trial lesson</span>
+                <span>Free level assessment in your trial session</span>
               </div>
               <div className="enquiry-benefit">
                 <span className="benefit-check">✓</span>
@@ -39,16 +39,17 @@ export default function ContactForm() {
                 <span>No obligation — we help you decide what's best</span>
               </div>
             </div>
+            <p className="enquiry-key-line" style={{ marginTop: '1.5rem', fontWeight: 500, color: 'var(--gold)' }}>This isn’t a sample. It’s a structured starting point.</p>
           </div>
           <div className="enquiry-form-wrapper reveal reveal-delay-1">
             <form className="enquiry-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Student Name</label>
-                  <input type="text" placeholder="Enter student name" required />
+                  <label>Name</label>
+                  <input type="text" placeholder="Enter name" required />
                 </div>
                 <div className="form-group">
-                  <label>Student Age</label>
+                  <label>Age</label>
                   <div className="select-wrapper">
                     <select required>
                       <option value="" disabled selected>Select age</option>
@@ -106,7 +107,7 @@ export default function ContactForm() {
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Parent / Guardian Name</label>
+                  <label>Contact Name</label>
                   <input type="text" placeholder="Your name" required />
                 </div>
                 <div className="form-group">
@@ -124,7 +125,7 @@ export default function ContactForm() {
                   <div className="select-wrapper">
                     <select>
                       <option value="" disabled selected>Select a program</option>
-                      <option value="group">Group Classes</option>
+                      <option value="group">Group Sessions</option>
                       <option value="consultant">1-on-1 Consultant</option>
                       <option value="jake">1-on-1 with Jake</option>
                       <option value="ielts">IELTS Specialist</option>
@@ -135,8 +136,8 @@ export default function ContactForm() {
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Student's English Experience <span style={{ color: 'var(--text-light)', fontWeight: 300 }}>(optional)</span></label>
-                  <input type="text" placeholder="e.g., 2 years of school English" />
+                  <label>Previous English Experience <span style={{ color: 'var(--text-light)', fontWeight: 300 }}>(optional)</span></label>
+                  <input type="text" placeholder="e.g., 2 years of English consulting" />
                 </div>
                 <div className="form-group">
                   <label>When Do You Want to Start? <span style={{ color: 'var(--text-light)', fontWeight: 300 }}>(optional)</span></label>
@@ -153,10 +154,10 @@ export default function ContactForm() {
               </div>
               <div className="form-group">
                 <label>Any Extra Notes <span style={{ color: 'var(--text-light)', fontWeight: 300 }}>(optional)</span></label>
-                <textarea placeholder="Tell us anything else about the student's needs..." rows="3"></textarea>
+                <textarea placeholder="Tell us anything else about your needs..." rows="3"></textarea>
               </div>
               <button type="submit" className="form-submit" style={submitted ? { background: '#2d7a4f', color: '#fff' } : {}}>
-                {submitted ? 'Request Sent ✓' : 'Request a Trial Lesson'}
+                {submitted ? 'Enquiry Sent ✓' : 'SUBMIT ENQUIRY'}
               </button>
               <p className="form-note">We'll respond within 24 hours to schedule your trial assessment.</p>
               <p className="form-privacy">By submitting this form, you consent to us contacting you regarding your enquiry. We respect your privacy and will not share your information.</p>

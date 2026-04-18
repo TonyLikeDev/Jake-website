@@ -10,19 +10,19 @@ export default function TrustBar() {
       <div className="container">
         <div className="trust-items">
           <div className="trust-item reveal">
-            <strong>No Commitment</strong>
-            Clear level assessment in first lesson
+            <strong>NO COMMITMENT</strong>
+            Clear level assessment in first session
           </div>
           <div className="trust-item reveal reveal-delay-1">
-            <strong>Expression First</strong>
+            <strong>EXPRESSION FIRST</strong>
             Focus on communication, not memorization
           </div>
           <div className="trust-item reveal reveal-delay-2">
-            <strong>Individual Focus</strong>
-            Individual focus, even in Groups
+            <strong>INDIVIDUAL FOCUS</strong>
+            Individual focus, even in groups
           </div>
           <div className="trust-item reveal reveal-delay-3">
-            <strong>10+ Years</strong>
+            <strong>10+ YEARS</strong>
             Years experience for each consultant
           </div>
         </div>

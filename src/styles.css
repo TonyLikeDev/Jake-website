@@ -45,7 +45,7 @@ h1, h2, h3, h4 {
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 1.2s ease, transform 1.2s ease;
 }
 .reveal.visible {
     opacity: 1;
@@ -837,6 +837,16 @@ section { padding: 120px 0; }
 }
 
 /* Program Modal */
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 .program-modal {
     display: none;
     position: fixed;
@@ -851,7 +861,13 @@ section { padding: 120px 0; }
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
-.program-modal.open { display: flex; }
+.program-modal.open { 
+    display: flex; 
+    animation: modalFadeIn 0.3s ease forwards;
+}
+.program-modal.open .program-modal-content {
+    animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 .program-modal-content {
     width: 100%;
     max-width: 800px;

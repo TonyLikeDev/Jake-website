@@ -2,47 +2,47 @@ import { useEffect } from 'react'
 
 const programData = {
   group: {
-    badge: 'Group Program',
-    title: 'Group Classes',
-    desc: 'Small-group sessions (max 4 students) focused on conversation, comprehension, and confidence-building. A great introduction before committing to 1-on-1. Most students continue after assessment.',
+    badge: 'GROUP PROGRAM',
+    title: 'Group Sessions',
+    desc: 'Small-group sessions (max 4 participants) focused on conversation, comprehension, and confidence-building. A great introduction before committing to 1-on-1. Most participants continue after assessment.',
     features: [
-      { title: 'Small Groups, Maximum Impact', text: 'Maximum 4 students per session ensures each student gets speaking time while benefiting from peer interaction. Groups are carefully matched by level and age.' },
-      { title: 'Conversation-First Learning', text: 'Sessions built around real topics—science, culture, current events—not textbooks. Students practice expressing ideas they already understand, building fluency naturally.' },
-      { title: 'Assessment Included', text: 'Every student starts with a level assessment during their trial. We group students at the right level and track progress throughout the program.' },
-      { title: 'Pathway to 1-on-1', text: 'Most students transition to 1-on-1 sessions after assessment and initial group experience. The group format is an excellent starting point.' }
+      { title: 'Small Groups, Maximum Impact', text: 'Maximum 4 participants per session ensures each person gets speaking time while benefiting from peer interaction. Groups are carefully matched by level and age.' },
+      { title: 'Conversation-First Learning', text: 'Sessions built around real topics—science, culture, current events—not textbooks. Participants practice expressing ideas they already understand, building fluency naturally.' },
+      { title: 'Assessment Included', text: 'Every person starts with a level assessment during their trial. We group participants at the right level and track progress throughout the program.' },
+      { title: 'Pathway to 1-on-1', text: 'Most participants transition to 1-on-1 sessions after assessment and initial group experience. The group format is an excellent starting point.' }
     ]
   },
   consultant: {
-    badge: 'Most Popular',
+    badge: 'MOST POPULAR',
     title: '1-on-1 Consultant',
-    desc: 'Fully personalized 1-on-1 sessions tailored to the student\'s pace, interests, and goals. The core of the Golden Method—expression-first learning with real-time feedback.',
+    desc: 'Fully personalised 1-on-1 sessions tailored to your pace, interests, and goals. The core of the Golden Method—expression-first learning with real-time feedback.',
     features: [
-      { title: 'Personalized Curriculum', text: 'Sessions designed around what the student already cares about. When the topic is interesting, the English flows naturally. No generic textbooks.' },
-      { title: 'Real-Time Feedback', text: 'Every word the student speaks gets immediate, gentle correction. They learn to self-correct through guided conversation, building accuracy without sacrificing confidence.' },
-      { title: 'Flexible Pacing', text: 'We adapt to the student\'s rhythm—no rushing, no holding back. Some students need more time on foundations; others are ready for advanced discussion quickly.' },
-      { title: 'Regular Progress Reports', text: 'Parents receive consistent updates on their student\'s development—areas of improvement, current focus, and practical suggestions for practice at home.' }
+      { title: 'Personalised Curriculum', text: 'Sessions designed around what you already care about. When the topic is interesting, the English flows naturally. No generic textbooks.' },
+      { title: 'Real-Time Feedback', text: 'Every word spoken gets immediate, gentle guidance. Participants learn to self-correct through guided conversation, building accuracy without sacrificing confidence.' },
+      { title: 'Flexible Pacing', text: 'We adapt to your rhythm—no rushing, no holding back. Some participants need more time on foundations; others are ready for advanced discussion quickly.' },
+      { title: 'Regular Progress Reports', text: 'You receive consistent updates on your development—areas of improvement, current focus, and practical suggestions for real-world practice.' }
     ]
   },
   jake: {
-    badge: 'Limited Availability',
+    badge: 'LIMITED AVAILABILITY',
     title: '1-on-1 with Jake',
-    desc: 'Premium tier with Jake as your dedicated tutor. Extended session time, priority scheduling, and the most intensive personalization available.',
+    desc: 'Premium tier with Jake as your lead consultant. Extended session time, priority scheduling, and the most intensive personalization available.',
     features: [
       { title: 'Extended Session Time', text: 'Sessions with Jake run longer—allowing deeper exploration of topics, more speaking practice, and more thorough feedback. Every minute is maximized.' },
-      { title: 'Priority Scheduling', text: 'Premium students get first access to Jake\'s calendar. Sessions scheduled around your family\'s availability, not ours.' },
-      { title: 'Maximum Personalization', text: 'Jake draws on years of experience to read the student\'s needs in real-time—adjusting pace, topics, and difficulty on the fly.' },
-      { title: 'Weekly Progress Tracking', text: 'The most detailed reporting available. Weekly updates cover every area of improvement, current focus, and specific suggestions for home practice.' }
+      { title: 'Priority Scheduling', text: 'Premium participants get first access to Jake\'s calendar. Sessions scheduled around your availability, not ours.' },
+      { title: 'Maximum Personalisation', text: 'Jake draws on years of experience to read your needs in real-time—adjusting pace, topics, and difficulty on the fly.' },
+      { title: 'Weekly Progress Tracking', text: 'The most detailed reporting available. Weekly updates cover every area of growth, current focus, and specific suggestions for practice.' }
     ]
   },
   ielts: {
-    badge: 'Specialist Program',
+    badge: 'SPECIALIST PROGRAM',
     title: 'IELTS Specialist',
     desc: 'Score-focused preparation for IELTS Academic and General Training. Covers all four skills—Listening, Reading, Writing, Speaking—with exam strategies, timed practice, and mock assessments.',
     features: [
       { title: 'All Four Skills Covered', text: 'Listening, Reading, Writing, Speaking—we develop all four systematically. We build a balanced profile so no single skill holds the overall score back.' },
-      { title: 'Exam Strategies & Timed Practice', text: 'We teach exam-specific strategies—time management, question analysis, response structuring—so the student performs at their best under pressure.' },
-      { title: 'Mock Assessments', text: 'Regular mock tests simulate real exam conditions. The student becomes comfortable with the format, timing, and expectations before the actual test day.' },
-      { title: 'Dedicated IELTS Specialists', text: 'Our team includes tutors who specialize exclusively in IELTS preparation. They know the scoring rubrics, common pitfalls, and where students gain the most points.' }
+      { title: 'Exam Strategies & Timed Practice', text: 'We teach exam-specific strategies—time management, question analysis, response structuring—so you perform at your best under pressure.' },
+      { title: 'Mock Assessments', text: 'Regular mock tests simulate real exam conditions. Participants become comfortable with the format, timing, and expectations before the actual test day.' },
+      { title: 'Dedicated IELTS Specialists', text: 'Our team includes consultants who specialise exclusively in IELTS preparation. They know the scoring rubrics, common pitfalls, and where you gain the most points.' }
     ]
   }
 }
@@ -80,27 +80,27 @@ export default function ProgramModal({ programKey, onClose }) {
           ))}
         </div>
         <div className="program-modal-packages">
-          <h3>Lesson Packages</h3>
+          <h3>Session Packages</h3>
           <div className="program-modal-packages-grid">
             <div className="program-modal-pkg">
-              <div className="program-modal-pkg-lessons">20 Lessons</div>
+              <div className="program-modal-pkg-lessons">20 Sessions</div>
               <h4>Starter</h4>
-              <p>A solid foundation for new students exploring the method.</p>
+              <p>A solid foundation for new participants exploring the method.</p>
             </div>
             <div className="program-modal-pkg featured">
               <span className="program-modal-pkg-badge">Most Popular</span>
-              <div className="program-modal-pkg-lessons">30 Lessons</div>
+              <div className="program-modal-pkg-lessons">30 Sessions</div>
               <h4>Growth</h4>
               <p>Enough sessions to see real transformation in expression.</p>
             </div>
             <div className="program-modal-pkg">
-              <div className="program-modal-pkg-lessons">60 Lessons</div>
+              <div className="program-modal-pkg-lessons">60 Sessions</div>
               <h4>Mastery</h4>
               <p>Deep, lasting fluency. The best per-session value.</p>
             </div>
           </div>
         </div>
-        <a href="#contact" className="program-modal-cta" onClick={onClose}>Request a Trial Lesson</a>
+        <a href="#contact" className="program-modal-cta" onClick={onClose}>Request a Trial</a>
       </div>
     </div>
   )
