@@ -22,6 +22,7 @@ export default function ReviewsSection({ onOpenVideo }) {
   useReveal()
  
   const [filter, setFilter] = useState('all')
+  const [showAll, setShowAll] = useState(false)
 
   const tabs = [
     { key: 'all', label: 'All' },
@@ -31,6 +32,7 @@ export default function ReviewsSection({ onOpenVideo }) {
   ]
 
   const filtered = reviews.filter(rv => filter === 'all' || rv.category.includes(filter))
+  const displayedReviews = showAll ? filtered : filtered.slice(0, 2)
 
   return (
     <section className="reviews-section" id="reviews">
@@ -46,7 +48,10 @@ export default function ReviewsSection({ onOpenVideo }) {
             <button
               key={tab.key}
               className={`review-tab${filter === tab.key ? ' active' : ''}`}
-              onClick={() => setFilter(tab.key)}
+              onClick={() => {
+                setFilter(tab.key)
+                setShowAll(false)
+              }}
             >
               {tab.label}
             </button>
@@ -54,7 +59,7 @@ export default function ReviewsSection({ onOpenVideo }) {
         </div>
 
         <div className="reviews-grid">
-          {filtered.map((rv, i) => (
+          {displayedReviews.map((rv, i) => (
             <div className={`review-card reveal${i ? ` reveal-delay-${i}` : ''}`} key={rv.id}>
               <div className="review-stars">★ ★ ★ ★ ★</div>
               <p className="review-text">{rv.text}</p>
@@ -68,6 +73,14 @@ export default function ReviewsSection({ onOpenVideo }) {
             </div>
           ))}
         </div>
+
+        {filtered.length > 2 && (
+          <div className="reviews-actions reveal">
+            <button className="btn-secondary" onClick={() => setShowAll(!showAll)}>
+              {showAll ? 'Show Less' : 'Show More'}
+            </button>
+          </div>
+        )}
 
         <div style={{ marginTop: 64 }}>
           <h3 className="section-title reveal" style={{ fontSize: '1.6rem' }}>Hear from clients directly</h3>
