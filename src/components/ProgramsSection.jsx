@@ -1,10 +1,47 @@
-
-
+import { useState } from 'react'
 import useReveal from '../hooks/useReveal'
+
+const programs = [
+  {
+    key: 'group',
+    tag: 'GROUP',
+    name: 'Group Sessions',
+    hours: '1 hr / session · up to 4 learners',
+    highlight: 'Shared-room practice',
+    desc: 'Small groups, max 4. Conversation-focused. Build communication through real-world expression.',
+    badge: 'MOST POPULAR',
+  },
+  {
+    key: 'consultant',
+    tag: 'INDIVIDUAL',
+    name: '1-on-1 Consultant',
+    hours: '1 hr / session · fully personalised',
+    highlight: 'Personal pace & topics',
+    desc: 'Real-time feedback tailored to your level. Expression-first learning with immediate guidance.',
+  },
+  {
+    key: 'jake',
+    tag: 'INTENSIVE',
+    name: '1-on-1 Intensive',
+    hours: '90 min / session · extended format',
+    highlight: 'Longer sessions, deeper work',
+    desc: 'Extended session time for deeper topic exploration and more speaking practice per meeting.',
+    badge: 'LIMITED AVAILABILITY',
+  },
+  {
+    key: 'ielts',
+    tag: 'SPECIALIST',
+    name: 'IELTS Specialist',
+    hours: '1 hr / session · exam-focused',
+    highlight: 'Score-focused prep',
+    desc: 'All four skills covered. Strategic preparation for IELTS Academic and General Training.',
+  },
+]
 
 export default function ProgramsSection({ onOpenProgram }) {
   useReveal()
- 
+  const [selected, setSelected] = useState('group')
+
   return (
     <section className="programs-section" id="programs">
       <div className="container">
@@ -14,33 +51,29 @@ export default function ProgramsSection({ onOpenProgram }) {
           <p className="section-desc">Every program is personalised to the individual's level. Choose what works best for you.</p>
         </div>
         <div className="programs-grid programs-grid-4">
-          <div className="program-card featured reveal">
-            <div className="program-badge">MOST POPULAR</div>
-            <div className="program-age">GROUP</div>
-            <h3 className="program-name">Group Sessions</h3>
-            <p className="program-desc">Small groups, max 4. Conversation-focused. Build communication through real-world expression.</p>
-            <p className="program-note">After assessment, we find the right fit for your goals and communication style.</p>
-            <button className="program-cta" onClick={() => onOpenProgram('group')}>Learn More</button>
-          </div>
-          <div className="program-card reveal reveal-delay-1">
-            <div className="program-age">INDIVIDUAL</div>
-            <h3 className="program-name">1-on-1 Consultant</h3>
-            <p className="program-desc">Fully personalised. Real-time feedback. The core of the Golden Method is expression-first learning with immediate guidance.</p>
-            <button className="program-cta" onClick={() => onOpenProgram('consultant')}>Learn More</button>
-          </div>
-          <div className="program-card reveal reveal-delay-2">
-            <div className="program-badge" style={{ background: 'rgba(201,151,58,0.15)', color: 'var(--gold)' }}>LIMITED AVAILABILITY</div>
-            <div className="program-age">PREMIUM</div>
-            <h3 className="program-name">1-on-1 with Jake</h3>
-            <p className="program-desc">Premium. Limited availability. High-intensity personalization with our lead consultant.</p>
-            <button className="program-cta" onClick={() => onOpenProgram('jake')}>Learn More</button>
-          </div>
-          <div className="program-card reveal reveal-delay-3">
-            <div className="program-age">SPECIALIST</div>
-            <h3 className="program-name">IELTS Specialist</h3>
-            <p className="program-desc">Score-focused. All four skills covered. Strategic preparation for IELTS Academic and General Training.</p>
-            <button className="program-cta" onClick={() => onOpenProgram('ielts')}>Learn More</button>
-          </div>
+          {programs.map((p, i) => (
+            <div
+              key={p.key}
+              className={`program-card reveal${i ? ` reveal-delay-${i}` : ''}${selected === p.key ? ' featured' : ''}`}
+              onClick={() => setSelected(p.key)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelected(p.key) } }}
+            >
+              {p.badge && <div className="program-badge">{p.badge}</div>}
+              <div className="program-age">{p.tag}</div>
+              <h3 className="program-name">{p.name}</h3>
+              <div className="program-hours">{p.hours}</div>
+              <div className="program-highlight">{p.highlight}</div>
+              <p className="program-desc">{p.desc}</p>
+              <button
+                className="program-cta"
+                onClick={(e) => { e.stopPropagation(); onOpenProgram(p.key) }}
+              >
+                Learn More
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </section>

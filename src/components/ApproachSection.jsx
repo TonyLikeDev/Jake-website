@@ -1,10 +1,8 @@
-
-
 import useReveal from '../hooks/useReveal'
 
 export default function ApproachSection() {
   useReveal()
- 
+
   return (
     <section className="approach-section" id="approach">
       <div className="container">

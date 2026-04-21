@@ -1,5 +1,5 @@
-import { useState } from 'react'
-
+import { useState, useRef, useEffect } from 'react'
+import useReveal from '../hooks/useReveal'
 
 const reviews = [
   { id: 1, category: '1on1', text: '"My son went from being terrified to speak English to raising his hand in every session within 4 months. The change wasn\'t overnight—it was steady, and that\'s what made it real. He actually looks forward to his sessions."', avatar: 'L', name: 'Lin', meta: 'Leo, age 8 · 6 months in' },
@@ -16,13 +16,12 @@ const videoTestimonials = [
   { id: 3, img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=225&fit=crop', name: 'Huang', meta: 'Father of Ryan, age 13', text: 'Video: Huang shares his son debate competition journey' }
 ]
 
-import useReveal from '../hooks/useReveal'
-
 export default function ReviewsSection({ onOpenVideo }) {
   useReveal()
- 
+
   const [filter, setFilter] = useState('all')
-  const [showAll, setShowAll] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const viewportRef = useRef(null)
 
   const tabs = [
     { key: 'all', label: 'All' },
@@ -32,7 +31,49 @@ export default function ReviewsSection({ onOpenVideo }) {
   ]
 
   const filtered = reviews.filter(rv => filter === 'all' || rv.category.includes(filter))
-  const displayedReviews = showAll ? filtered : filtered.slice(0, 2)
+
+  useEffect(() => {
+    if (viewportRef.current) {
+      viewportRef.current.scrollTo({ left: 0, behavior: 'auto' })
+    }
+    setActiveIndex(0)
+  }, [filter])
+
+  useEffect(() => {
+    const el = viewportRef.current
+    if (!el) return
+    let raf = 0
+    const onScroll = () => {
+      if (raf) return
+      raf = requestAnimationFrame(() => {
+        raf = 0
+        const slide = el.firstElementChild
+        if (!slide) return
+        const width = slide.getBoundingClientRect().width || 1
+        const idx = Math.round(el.scrollLeft / width)
+        setActiveIndex(Math.max(0, Math.min(filtered.length - 1, idx)))
+      })
+    }
+    el.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      el.removeEventListener('scroll', onScroll)
+      if (raf) cancelAnimationFrame(raf)
+    }
+  }, [filtered.length])
+
+  const scrollToIndex = (idx) => {
+    const el = viewportRef.current
+    if (!el) return
+    const count = filtered.length
+    if (count === 0) return
+    const next = ((idx % count) + count) % count
+    const slide = el.firstElementChild
+    const width = slide ? slide.getBoundingClientRect().width : el.clientWidth
+    el.scrollTo({ left: next * width, behavior: 'smooth' })
+  }
+
+  const prev = () => scrollToIndex(activeIndex - 1)
+  const next = () => scrollToIndex(activeIndex + 1)
 
   return (
     <section className="reviews-section" id="reviews">
@@ -48,43 +89,55 @@ export default function ReviewsSection({ onOpenVideo }) {
             <button
               key={tab.key}
               className={`review-tab${filter === tab.key ? ' active' : ''}`}
-              onClick={() => {
-                setFilter(tab.key)
-                setShowAll(false)
-              }}
+              onClick={() => setFilter(tab.key)}
             >
               {tab.label}
             </button>
           ))}
         </div>
 
-        <div className="reviews-grid">
-          {displayedReviews.map((rv, i) => (
-            <div className={`review-card reveal${i ? ` reveal-delay-${i}` : ''}`} key={rv.id}>
-              <div className="review-stars">★ ★ ★ ★ ★</div>
-              <p className="review-text">{rv.text}</p>
-              <div className="review-author">
-                <div className="review-avatar">{rv.avatar}</div>
-                <div>
-                  <div className="review-name">{rv.name}</div>
-                  <div className="review-meta">{rv.meta}</div>
+        <div className="reviews-carousel reveal">
+          <button className="reviews-arrow reviews-arrow-prev" onClick={prev} aria-label="Previous review">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+
+          <div className="reviews-viewport" ref={viewportRef}>
+            {filtered.map((rv) => (
+              <div className="reviews-slide" key={rv.id}>
+                <div className="review-card">
+                  <div className="review-stars">★ ★ ★ ★ ★</div>
+                  <p className="review-text">{rv.text}</p>
+                  <div className="review-author">
+                    <div className="review-avatar">{rv.avatar}</div>
+                    <div>
+                      <div className="review-name">{rv.name}</div>
+                      <div className="review-meta">{rv.meta}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <button className="reviews-arrow reviews-arrow-next" onClick={next} aria-label="Next review">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <div className="reviews-dots reveal">
+          {filtered.map((_, i) => (
+            <button
+              key={i}
+              className={`reviews-dot${i === activeIndex ? ' active' : ''}`}
+              onClick={() => scrollToIndex(i)}
+              aria-label={`Go to review ${i + 1}`}
+            />
           ))}
         </div>
 
-        {filtered.length > 2 && (
-          <div className="reviews-actions reveal">
-            <button className="btn-secondary" onClick={() => setShowAll(!showAll)}>
-              {showAll ? 'Show Less' : 'Show More'}
-            </button>
-          </div>
-        )}
-
-        <div style={{ marginTop: 64 }}>
+        <div style={{ marginTop: 48 }}>
           <h3 className="section-title reveal" style={{ fontSize: '1.6rem' }}>Hear from clients directly</h3>
-          <p className="section-desc reveal" style={{ marginBottom: 32 }}>Short video testimonials from families who've seen the transformation.</p>
+          <p className="section-desc reveal" style={{ marginBottom: 24 }}>Short video testimonials from families who've seen the transformation.</p>
           <div className="review-video-cards">
             {videoTestimonials.map((v, i) => (
               <div key={v.id} className={`review-video-card reveal${i ? ` reveal-delay-${i}` : ''}`} onClick={() => onOpenVideo(v.text)}>

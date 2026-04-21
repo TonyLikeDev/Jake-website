@@ -4,12 +4,12 @@ const programData = {
   group: {
     badge: 'GROUP PROGRAM',
     title: 'Group Sessions',
-    desc: 'Small-group sessions (max 4 participants) focused on conversation, comprehension, and confidence-building. A great introduction before committing to 1-on-1. Most participants continue after assessment.',
+    desc: 'Small-group sessions (max 4 participants) focused on conversation, comprehension, and confidence-building. Designed to deliver real progress in a shared-room setting.',
     features: [
       { title: 'Small Groups, Maximum Impact', text: 'Maximum 4 participants per session ensures each person gets speaking time while benefiting from peer interaction. Groups are carefully matched by level and age.' },
       { title: 'Conversation-First Learning', text: 'Sessions built around real topics—science, culture, current events—not textbooks. Participants practice expressing ideas they already understand, building fluency naturally.' },
       { title: 'Assessment Included', text: 'Every person starts with a level assessment during their trial. We group participants at the right level and track progress throughout the program.' },
-      { title: 'Pathway to 1-on-1', text: 'Most participants transition to 1-on-1 sessions after assessment and initial group experience. The group format is an excellent starting point.' }
+      { title: 'Peer-Powered Practice', text: 'Learning alongside others at a similar level creates a natural, low-pressure environment to try new structures and build speaking confidence together.' }
     ]
   },
   consultant: {
@@ -25,12 +25,12 @@ const programData = {
   },
   jake: {
     badge: 'LIMITED AVAILABILITY',
-    title: '1-on-1 with Jake',
-    desc: 'Premium tier with Jake as your lead consultant. Extended session time, priority scheduling, and the most intensive personalization available.',
+    title: '1-on-1 Intensive',
+    desc: 'Our most intensive tier: extended 90-minute sessions, priority scheduling, and deeper progress tracking for learners who want to move faster.',
     features: [
-      { title: 'Extended Session Time', text: 'Sessions with Jake run longer—allowing deeper exploration of topics, more speaking practice, and more thorough feedback. Every minute is maximized.' },
-      { title: 'Priority Scheduling', text: 'Premium participants get first access to Jake\'s calendar. Sessions scheduled around your availability, not ours.' },
-      { title: 'Maximum Personalisation', text: 'Jake draws on years of experience to read your needs in real-time—adjusting pace, topics, and difficulty on the fly.' },
+      { title: 'Extended 90-Minute Sessions', text: 'Longer sessions allow deeper exploration of topics, more speaking practice, and more thorough feedback in every meeting. Every minute is maximized.' },
+      { title: 'Priority Scheduling', text: 'Intensive participants get first access to the calendar. Sessions scheduled around your availability, not ours.' },
+      { title: 'Maximum Personalisation', text: 'Pace, topics, and difficulty are tuned live to match what each session calls for — no two meetings feel the same.' },
       { title: 'Weekly Progress Tracking', text: 'The most detailed reporting available. Weekly updates cover every area of growth, current focus, and specific suggestions for practice.' }
     ]
   },
