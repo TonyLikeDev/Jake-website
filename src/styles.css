@@ -729,7 +729,7 @@ section { padding: 80px 0; }
     scrollbar-width: none;
     scroll-behavior: smooth;
     overscroll-behavior-x: contain;
-    touch-action: pan-x;
+    touch-action: auto;
 }
 .reviews-viewport::-webkit-scrollbar { display: none; }
 .reviews-slide {
