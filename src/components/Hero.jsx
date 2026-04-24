@@ -21,10 +21,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <a href="#trust" className="hero-scroll">
-        <span>Scroll</span>
-        <div className="hero-scroll-line"></div>
-      </a>
     </section>
   )
 }
