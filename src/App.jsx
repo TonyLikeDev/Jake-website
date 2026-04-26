@@ -35,9 +35,9 @@ export default function App() {
       <Hero />
       <TrustBar />
       <MethodSection />
+      <ApproachSection />
       <ProgramsSection onOpenProgram={openProgram} />
       <ProgramModal programKey={programModal} onClose={closeProgram} />
-      <ApproachSection />
       <AboutSection />
       <ReviewsSection onOpenVideo={openVideo} />
       <VideoModal text={videoModal} onClose={closeVideo} />
