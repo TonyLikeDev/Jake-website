@@ -14,18 +14,10 @@ const programs = [
   {
     key: 'consultant',
     tag: 'INDIVIDUAL',
-    name: '1-on-1 Consultant',
+    name: '1-on-1 Focused',
     hours: '1 hr / session · fully personalised',
     highlight: 'Personal pace & topics',
     desc: 'Real-time feedback tailored to your level. Expression-first learning with immediate guidance.',
-  },
-  {
-    key: 'jake',
-    tag: 'INTENSIVE',
-    name: '1-on-1 Intensive',
-    hours: '90 min / session · extended format',
-    highlight: 'Longer sessions, deeper work',
-    desc: 'Extended session time for deeper topic exploration and more speaking practice per meeting.',
     badge: 'LIMITED AVAILABILITY',
   },
   {
@@ -85,7 +77,7 @@ export default function ProgramsSection({ onOpenProgram }) {
       <div className="container">
         <div className="reveal">
           <span className="section-label">PROGRAMS</span>
-          <h2 className="section-title">Four programs. One commitment.</h2>
+          <h2 className="section-title">Three programs. One commitment.</h2>
           <p className="section-desc">Every program is personalised to the individual's level. Choose what works best for you.</p>
         </div>
         
@@ -98,7 +90,7 @@ export default function ProgramsSection({ onOpenProgram }) {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
 
-          <div className="programs-grid programs-grid-4" ref={gridRef}>
+          <div className="programs-grid programs-grid-3" ref={gridRef}>
             {programs.map((p, i) => (
               <div
                 key={p.key}

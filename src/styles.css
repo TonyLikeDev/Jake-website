@@ -16,10 +16,11 @@
     --white: #ffffff;
 }
 
-html { 
-    scroll-behavior: smooth; 
+html {
+    scroll-behavior: smooth;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE/Edge */
+    overflow-x: hidden;
 }
 html::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
@@ -175,10 +176,18 @@ nav.scrolled {
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
+    white-space: nowrap;
 }
 .nav-cta:hover {
     background: var(--gold);
     color: var(--dark) !important;
+}
+
+@media (max-width: 1024px) {
+    .nav-logo { font-size: 1.1rem; }
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 0.76rem; letter-spacing: 0.04em; }
+    .nav-cta { padding: 8px 14px; font-size: 0.72rem !important; letter-spacing: 0.08em !important; }
 }
 
 .mobile-toggle {
@@ -258,7 +267,7 @@ nav.scrolled {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: min(1200px, 100%);
 }
 .hero-badge {
     display: inline-flex;
@@ -284,23 +293,24 @@ nav.scrolled {
     border-radius: 50%;
 }
 .hero h1 {
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-size: clamp(2.2rem, 5vw, 6rem);
     color: var(--white);
     margin-bottom: 28px;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    max-width: 900px;
 }
 .hero h1 em {
     font-style: italic;
     color: var(--gold);
 }
 .hero-sub {
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.4vw, 1.5rem);
     font-style: normal;
     color: var(--white);
-    max-width: 560px;
+    max-width: 640px;
     margin-bottom: 40px;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 .hero-support {
     font-size: 0.85rem;
@@ -532,9 +542,9 @@ section { padding: 80px 0; }
     gap: 32px;
     margin-top: 48px;
 }
-.programs-grid-4 {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+.programs-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
 }
 .program-card {
     background: rgba(255, 255, 255, 0.03);
@@ -677,7 +687,16 @@ section { padding: 80px 0; }
 }
 .approach-card {
     text-align: center;
-    padding: 40px 32px;
+    padding: 48px 36px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.approach-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
 }
 .approach-icon {
     color: var(--gold);
@@ -1634,9 +1653,24 @@ footer {
 /* Responsive */
 @media (max-width: 1024px) {
     .method-grid { grid-template-columns: repeat(2, 1fr); }
+    .method-grid .method-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 16px);
+    }
     .programs-grid { grid-template-columns: repeat(2, 1fr); }
-    .programs-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .programs-grid-3 { grid-template-columns: repeat(2, 1fr); }
     .approach-grid { grid-template-columns: repeat(2, 1fr); }
+    .approach-grid .approach-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 16px);
+    }
+    .programs-grid-3 .program-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 14px);
+    }
     .about-grid { gap: 48px; }
 }
 
@@ -1651,8 +1685,13 @@ footer {
     .nav-links { display: none; }
     .mobile-toggle { display: flex; }
     .method-grid { grid-template-columns: 1fr; }
+    .method-grid .method-card:last-child {
+        grid-column: auto;
+        justify-self: auto;
+        width: auto;
+    }
     .programs-grid,
-    .programs-grid-4 {
+    .programs-grid-3 {
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: 82%;
@@ -1666,11 +1705,16 @@ footer {
         scrollbar-width: none;
     }
     .programs-grid::-webkit-scrollbar,
-    .programs-grid-4::-webkit-scrollbar { display: none; }
+    .programs-grid-3::-webkit-scrollbar { display: none; }
     .programs-grid .program-card,
-    .programs-grid-4 .program-card {
+    .programs-grid-3 .program-card {
         scroll-snap-align: center;
         min-height: 320px;
+    }
+    .programs-grid-3 .program-card:last-child {
+        grid-column: auto;
+        justify-self: auto;
+        width: auto;
     }
     
     .programs-carousel-wrapper {
@@ -1703,6 +1747,11 @@ footer {
     .programs-arrow-next { right: 10px; }
 
     .approach-grid { grid-template-columns: 1fr; }
+    .approach-grid .approach-card:last-child {
+        grid-column: auto;
+        justify-self: auto;
+        width: auto;
+    }
     .about-grid { grid-template-columns: 1fr; }
     .about-image { aspect-ratio: 4/3; }
     .reviews-grid { grid-template-columns: 1fr; }
