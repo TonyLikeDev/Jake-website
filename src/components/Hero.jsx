@@ -2,7 +2,7 @@
 
 import useReveal from '../hooks/useReveal'
 
-export default function Hero() {
+export default function Hero({ onOpenContact }) {
   useReveal()
 
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
           <h1 className="reveal reveal-delay-1">Students Already Know More Than They Think. <em>Most just haven&apos;t been taught how to communicate it clearly in English.</em></h1>
           <p className="hero-sub reveal reveal-delay-2">Understanding isn’t the Problem. Expression Is.</p>
           <div className="hero-actions reveal reveal-delay-3">
-            <a href="#contact" className="btn-primary">Request a Trial</a>
+            <button type="button" className="btn-primary" onClick={onOpenContact}>Request a Trial</button>
             <a href="#how-it-works" className="btn-secondary">See How It Works</a>
           </div>
         </div>

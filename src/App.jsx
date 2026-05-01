@@ -19,6 +19,7 @@ export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [programModal, setProgramModal] = useState(null)
   const [videoModal, setVideoModal] = useState(null)
+  const [contactOpen, setContactOpen] = useState(false)
   const [lang, setLang] = useState('en')
 
   const toggleMobile = useCallback(() => setMobileOpen(p => !p), [])
@@ -27,24 +28,26 @@ export default function App() {
   const closeProgram = useCallback(() => setProgramModal(null), [])
   const openVideo = useCallback((text) => setVideoModal(text), [])
   const closeVideo = useCallback(() => setVideoModal(null), [])
+  const openContact = useCallback(() => setContactOpen(true), [])
+  const closeContact = useCallback(() => setContactOpen(false), [])
 
   return (
     <>
-      <Navbar onToggleMobile={toggleMobile} onToggleLang={toggleLang} lang={lang} />
-      <MobileMenu isOpen={mobileOpen} onToggleMobile={toggleMobile} />
-      <Hero />
+      <Navbar onToggleMobile={toggleMobile} onToggleLang={toggleLang} lang={lang} onOpenContact={openContact} />
+      <MobileMenu isOpen={mobileOpen} onToggleMobile={toggleMobile} onOpenContact={openContact} />
+      <Hero onOpenContact={openContact} />
       <TrustBar />
       <MethodSection />
       <ApproachSection />
       <ProgramsSection onOpenProgram={openProgram} />
-      <ProgramModal programKey={programModal} onClose={closeProgram} />
+      <ProgramModal programKey={programModal} onClose={closeProgram} onOpenContact={openContact} />
       <AboutSection />
       <ReviewsSection onOpenVideo={openVideo} />
       <VideoModal text={videoModal} onClose={closeVideo} />
-      <TrialCTA />
-      <ContactForm />
+      <TrialCTA onOpenContact={openContact} />
       <FAQ />
-      <Footer />
+      <Footer onOpenContact={openContact} />
+      <ContactForm isOpen={contactOpen} onClose={closeContact} />
     </>
   )
 }
