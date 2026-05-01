@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Navbar({ onToggleMobile, onToggleLang, lang }) {
+export default function Navbar({ onToggleMobile, onToggleLang, lang, onOpenContact }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Navbar({ onToggleMobile, onToggleLang, lang }) {
           <li><a href="#programs">Programs</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#reviews">Results</a></li>
-          <li><a href="#contact" className="nav-cta">Request a Trial</a></li>
+          <li><button type="button" className="nav-cta" onClick={onOpenContact}>Request a Trial</button></li>
         </ul>
         <button className="mobile-toggle" onClick={onToggleMobile} aria-label="Menu">
           <span></span><span></span><span></span>

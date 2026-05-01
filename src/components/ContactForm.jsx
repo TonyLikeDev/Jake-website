@@ -1,10 +1,19 @@
-import { useState, useCallback } from 'react'
-import useReveal from '../hooks/useReveal'
+import { useState, useCallback, useEffect } from 'react'
 
-export default function ContactForm() {
-  useReveal()
-
+export default function ContactForm({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false)
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose() }
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+      window.addEventListener('keydown', onKey)
+    }
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [isOpen, onClose])
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault()
@@ -15,10 +24,13 @@ export default function ContactForm() {
     }, 3000)
   }, [])
 
+  if (!isOpen) return null
+
   return (
-    <section className="enquiry-section" id="contact">
-      <div className="container">
-        <div className="enquiry-info reveal">
+    <div className="contact-modal open" onClick={onClose}>
+      <button className="contact-modal-close" onClick={onClose} aria-label="Close">&times;</button>
+      <div className="contact-modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="enquiry-info">
           <span className="section-label">Get Started</span>
           <h2 className="section-title">Start With an Assessment</h2>
           <p className="section-desc">This first session helps us understand your level, identify strengths, and recommend the right path forward.</p>
@@ -38,7 +50,7 @@ export default function ContactForm() {
           </div>
           <p className="enquiry-key-line">This isn't a sample. It's a structured starting point.</p>
         </div>
-        <div className="enquiry-form-wrapper reveal reveal-delay-1">
+        <div className="enquiry-form-wrapper">
           <form className="enquiry-form" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
@@ -150,6 +162,6 @@ export default function ContactForm() {
           </form>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

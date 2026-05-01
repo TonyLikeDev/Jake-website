@@ -47,7 +47,12 @@ const programData = {
   }
 }
 
-export default function ProgramModal({ programKey, onClose }) {
+export default function ProgramModal({ programKey, onClose, onOpenContact }) {
+  const handleCta = () => {
+    onClose()
+    onOpenContact()
+  }
+
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose() }
     if (programKey) {
@@ -100,7 +105,7 @@ export default function ProgramModal({ programKey, onClose }) {
             </div>
           </div>
         </div>
-        <a href="#contact" className="program-modal-cta" onClick={onClose}>Request a Trial</a>
+        <button type="button" className="program-modal-cta" onClick={handleCta}>Request a Trial</button>
       </div>
     </div>
   )

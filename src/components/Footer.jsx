@@ -2,9 +2,9 @@
 
 import useReveal from '../hooks/useReveal'
 
-export default function Footer() {
+export default function Footer({ onOpenContact }) {
   useReveal()
- 
+
   return (
     <footer>
       <div className="container">
@@ -16,7 +16,7 @@ export default function Footer() {
             <a href="#about">About</a>
             <a href="#reviews">Results</a>
             <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
+            <button type="button" className="footer-link-btn" onClick={onOpenContact}>Contact</button>
           </div>
         </div>
         <div className="footer-bottom reveal">
