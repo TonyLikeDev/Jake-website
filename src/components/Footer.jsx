@@ -34,7 +34,7 @@ export default function Footer({ onOpenContact }) {
             <ul className="footer-col-links">
               <li><a href="mailto:hello@thegoldenmethod.com">hello@thegoldenmethod.com</a></li>
               <li className="footer-wechat">WeChat ID: <span>thegoldenmethod</span></li>
-              <li className="footer-hours">Hours: Monday – Friday<br />9:00 AM – 6:00 PM CST</li>
+              <li className="footer-hours">Hours: Monday - Friday<br />9:00 AM - 6:00 PM CST</li>
             </ul>
           </div>
 

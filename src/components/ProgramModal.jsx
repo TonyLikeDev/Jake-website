@@ -7,7 +7,7 @@ const programData = {
     desc: 'Small-group workshops (max 4 participants) focused on conversation, comprehension, and confidence-building. Hosted on ClassIn, scheduled in 1, 1.5, or 2-hour blocks. Starting from ¥210/hr.',
     features: [
       { title: 'Small Groups, Maximum Impact', text: 'Maximum 4 participants per session ensures each person gets speaking time while benefiting from peer interaction. Groups are carefully matched by level and age.' },
-      { title: 'Conversation-First Learning', text: 'Sessions built around real topics—science, culture, current events—not textbooks. Participants practice expressing ideas they already understand, building fluency naturally.' },
+      { title: 'Conversation-First Learning', text: 'Sessions built around real topics-science, culture, current events-not textbooks. Participants practice expressing ideas they already understand, building fluency naturally.' },
       { title: 'Fixed Weekly Schedule', text: 'Workshops follow a fixed weekly schedule to keep the group consistent. Missed classes are not rescheduled, which keeps every session focused and on-track for the whole group.' },
       { title: 'Peer-Powered Practice', text: 'Learning alongside others at a similar level creates a natural, low-pressure environment to try new structures and build speaking confidence together.' }
     ]
@@ -19,8 +19,8 @@ const programData = {
     features: [
       { title: 'Personalized Curriculum', text: 'Sessions designed around your unique interests, using top-tier materials from Cambridge, National Geographic, and Pearson. When the topic is engaging, the English flows naturally.' },
       { title: 'Real-Time Feedback', text: 'Every word spoken gets immediate, gentle guidance. Participants learn to self-correct through guided conversation, building accuracy without sacrificing confidence.' },
-      { title: 'Flexible Pacing', text: 'Sessions run from 30 minutes up to 1.5 hours — we adapt to your rhythm. Some participants need more time on foundations; others move into advanced discussion quickly.' },
-      { title: 'Periodic Progress Reports', text: 'Parents and learners receive structured progress feedback from the Coach at fixed intervals during the package — clear, meaningful communication about real growth.' }
+      { title: 'Flexible Pacing', text: 'Sessions run from 30 minutes up to 1.5 hours - we adapt to your rhythm. Some participants need more time on foundations; others move into advanced discussion quickly.' },
+      { title: 'Periodic Progress Reports', text: 'Parents and learners receive structured progress feedback from the Coach at fixed intervals during the package - clear, meaningful communication about real growth.' }
     ]
   },
   jake: {
@@ -30,17 +30,17 @@ const programData = {
     features: [
       { title: 'Extended 90-Minute Sessions', text: 'Longer sessions allow deeper exploration of topics, more speaking practice, and more thorough feedback in every meeting. Every minute is maximized.' },
       { title: 'Priority Scheduling', text: 'Intensive participants get first access to the calendar. Sessions scheduled around your availability, not ours.' },
-      { title: 'Maximum Personalisation', text: 'Pace, topics, and difficulty are tuned live to match what each session calls for — no two meetings feel the same.' },
+      { title: 'Maximum Personalisation', text: 'Pace, topics, and difficulty are tuned live to match what each session calls for - no two meetings feel the same.' },
       { title: 'Weekly Progress Tracking', text: 'The most detailed reporting available. Weekly updates cover every area of growth, current focus, and specific suggestions for practice.' }
     ]
   },
   ielts: {
     badge: 'SPECIALIST PROGRAM',
     title: 'IELTS Specialist',
-    desc: 'Score-focused preparation for IELTS Academic and General Training. Covers all four skills—Listening, Reading, Writing, Speaking—with exam strategies, timed practice, and mock assessments.',
+    desc: 'Score-focused preparation for IELTS Academic and General Training. Covers all four skills-Listening, Reading, Writing, Speaking-with exam strategies, timed practice, and mock assessments.',
     features: [
-      { title: 'All Four Skills Covered', text: 'Listening, Reading, Writing, Speaking—we develop all four systematically. We build a balanced profile so no single skill holds the overall score back.' },
-      { title: 'Exam Strategies & Timed Practice', text: 'We teach exam-specific strategies—time management, question analysis, response structuring—so you perform at your best under pressure.' },
+      { title: 'All Four Skills Covered', text: 'Listening, Reading, Writing, Speaking-we develop all four systematically. We build a balanced profile so no single skill holds the overall score back.' },
+      { title: 'Exam Strategies & Timed Practice', text: 'We teach exam-specific strategies-time management, question analysis, response structuring-so you perform at your best under pressure.' },
       { title: 'Mock Assessments', text: 'Regular mock tests simulate real exam conditions. Participants become comfortable with the format, timing, and expectations before the actual test day.' },
       { title: 'Dedicated IELTS Specialists', text: 'Our team includes coaches who specialise exclusively in IELTS preparation. They know the scoring rubrics, common pitfalls, and where you gain the most points.' }
     ]
@@ -104,7 +104,7 @@ export default function ProgramModal({ programKey, onClose, onOpenContact }) {
               <div className="program-modal-pkg-lessons">60 Lessons</div>
               <h4>Mastery</h4>
               <p className="program-modal-pkg-price">¥310/hr · ¥18,600 total</p>
-              <p>Recommended completion ~9–12 months. Deep, lasting fluency. The best per-lesson value.</p>
+              <p>Recommended completion ~9-12 months. Deep, lasting fluency. The best per-lesson value.</p>
             </div>
           </div>
         </div>

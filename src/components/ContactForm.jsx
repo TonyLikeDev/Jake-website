@@ -45,7 +45,7 @@ export default function ContactForm({ isOpen, onClose }) {
             </div>
             <div className="enquiry-benefit">
               <span className="benefit-check">✓</span>
-              <span>No obligation — we help you decide what's best</span>
+              <span>No obligation - we help you decide what's best</span>
             </div>
           </div>
           <p className="enquiry-key-line">This isn't a sample. It's a structured starting point.</p>
