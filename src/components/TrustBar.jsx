@@ -23,7 +23,7 @@ export default function TrustBar() {
           </div>
           <div className="trust-item reveal reveal-delay-3">
             <strong>10+ YEARS</strong>
-            Years experience for each consultant
+            Years experience for each coach
           </div>
         </div>
       </div>

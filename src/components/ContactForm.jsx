@@ -126,7 +126,7 @@ export default function ContactForm({ isOpen, onClose }) {
                   <select defaultValue="">
                     <option value="" disabled>Select a program</option>
                     <option value="group">Group Sessions</option>
-                    <option value="consultant">1-on-1 Consultant</option>
+                    <option value="coaching">1-on-1 Coaching</option>
                     <option value="jake">1-on-1 Intensive</option>
                     <option value="ielts">IELTS Specialist</option>
                     <option value="unsure">Not sure yet</option>
@@ -148,7 +148,7 @@ export default function ContactForm({ isOpen, onClose }) {
             </div>
             <div className="form-group">
               <label>Previous English Experience <span className="field-optional">(optional)</span></label>
-              <input type="text" placeholder="e.g., 2 years of English consulting" />
+              <input type="text" placeholder="e.g., 2 years of English coaching" />
             </div>
             <div className="form-group">
               <label>Any Extra Notes <span className="field-optional">(optional)</span></label>

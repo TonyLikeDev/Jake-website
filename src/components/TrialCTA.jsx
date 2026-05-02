@@ -10,9 +10,9 @@ export default function TrialCTA({ onOpenContact }) {
       <div className="container">
         <div className="trial-cta-content reveal">
           <span className="section-label">START HERE</span>
-          <h2 className="section-title">Request a Trial</h2>
+          <h2 className="section-title">Book an Assessment</h2>
           <p className="section-desc" style={{ maxWidth: 600 }}>This first session helps us understand your level, identify strengths, and recommend the right path forward. This isn’t a sample. It’s a structured starting point.</p>
-          <button type="button" className="btn-primary" onClick={onOpenContact}>Request a Trial</button>
+          <button type="button" className="btn-primary" onClick={onOpenContact}>Book an Assessment</button>
           <p className="trial-note">No commitment required. We'll follow up to schedule your session.</p>
         </div>
       </div>

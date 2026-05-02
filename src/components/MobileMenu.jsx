@@ -9,7 +9,7 @@ export default function MobileMenu({ isOpen, onToggleMobile, onOpenContact }) {
       <a href="#programs" onClick={onToggleMobile}>Programs</a>
       <a href="#about" onClick={onToggleMobile}>About</a>
       <a href="#reviews" onClick={onToggleMobile}>Results</a>
-      <button type="button" onClick={handleContact}>Request a Trial</button>
+      <button type="button" onClick={handleContact}>Book an Assessment</button>
     </div>
   )
 }
