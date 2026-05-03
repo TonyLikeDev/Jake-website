@@ -10,7 +10,7 @@ export default function Footer({ onOpenContact }) {
       <div className="container">
         <div className="footer-cols">
           <div className="footer-col footer-col-brand">
-            <div className="footer-brand">The Golden <span>Method</span></div>
+            <div className="footer-brand">Exprim<span>io</span></div>
             <p className="footer-slogan">Express your premium English.</p>
             <p className="footer-mission">High-end, expression-first English language coaching designed for ambitious learners.</p>
           </div>
@@ -32,8 +32,8 @@ export default function Footer({ onOpenContact }) {
           <div className="footer-col">
             <h5 className="footer-col-title">Contact &amp; Support</h5>
             <ul className="footer-col-links">
-              <li><a href="mailto:hello@thegoldenmethod.com">hello@thegoldenmethod.com</a></li>
-              <li className="footer-wechat">WeChat ID: <span>thegoldenmethod</span></li>
+              <li><a href="mailto:hello@exprimio.com">hello@exprimio.com</a></li>
+              <li className="footer-wechat">WeChat ID: <span>exprimio</span></li>
               <li className="footer-hours">Hours: Monday - Friday<br />9:00 AM - 6:00 PM CST</li>
             </ul>
           </div>
@@ -49,7 +49,7 @@ export default function Footer({ onOpenContact }) {
         </div>
 
         <div className="footer-bottom reveal">
-          <span className="footer-copy">© 2026 The Golden Method. All rights reserved.</span>
+          <span className="footer-copy">© 2026 Exprimio. All rights reserved.</span>
           <span className="footer-copy footer-bottom-links">
             <a href="#terms">Terms of Use</a>
             <span className="footer-divider">|</span>

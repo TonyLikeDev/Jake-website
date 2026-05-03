@@ -82,7 +82,7 @@ const programData = {
     consultant: {
         badge: 'Most Popular',
         title: '1-on-1 Consultant',
-        desc: 'Fully personalized 1-on-1 sessions tailored to the student\'s pace, interests, and goals. The core of the Golden Method—expression-first learning with real-time feedback.',
+        desc: 'Fully personalized 1-on-1 sessions tailored to the student\'s pace, interests, and goals. The core of Exprimio—expression-first learning with real-time feedback.',
         features: [
             { title: 'Personalized Curriculum', text: 'Sessions designed around what the student already cares about. When the topic is interesting, the English flows naturally. No generic textbooks.' },
             { title: 'Real-Time Feedback', text: 'Every word the student speaks gets immediate, gentle correction. They learn to self-correct through guided conversation, building accuracy without sacrificing confidence.' },

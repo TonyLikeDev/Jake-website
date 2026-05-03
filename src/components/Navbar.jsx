@@ -12,7 +12,7 @@ export default function Navbar({ onToggleMobile, onToggleLang, lang, onOpenConta
   return (
     <nav className={scrolled ? 'scrolled' : ''}>
       <div className="nav-inner">
-        <a href="#" className="nav-logo">The Golden <span>Method</span></a>
+        <a href="#" className="nav-logo">Expr<span>imio</span></a>
         <ul className="nav-links">
           <li>
             <button className="nav-lang-toggle" onClick={onToggleLang}>
