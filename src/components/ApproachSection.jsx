@@ -1,4 +1,5 @@
 import useReveal from '../hooks/useReveal'
+import '../styles/approach.css'
 
 export default function ApproachSection() {
   useReveal()

@@ -1,21 +1,22 @@
 import { useEffect } from 'react'
+import '../styles/modals.css'
 
 const programData = {
   group: {
     badge: 'GROUP WORKSHOPS',
     title: 'Group Workshops',
-    desc: 'Small-group workshops (max 4 participants) focused on conversation, comprehension, and confidence-building. Hosted on ClassIn, scheduled in 1, 1.5, or 2-hour blocks. Starting from ¥210/hr.',
+    desc: 'Small-group workshops (max 4 participants) focused on conversation, comprehension, and confidence-building. Hosted on ClassIn, scheduled in 1, 1.5, or 2-hour blocks.',
     features: [
       { title: 'Small Groups, Maximum Impact', text: 'Maximum 4 participants per session ensures each person gets speaking time while benefiting from peer interaction. Groups are carefully matched by level and age.' },
       { title: 'Conversation-First Learning', text: 'Sessions built around real topics-science, culture, current events-not textbooks. Participants practice expressing ideas they already understand, building fluency naturally.' },
-      { title: 'Fixed Weekly Schedule', text: 'Workshops follow a fixed weekly schedule to keep the group consistent. Missed classes are not rescheduled, which keeps every session focused and on-track for the whole group.' },
+      { title: 'Fixed Weekly Schedule', text: 'Workshops follow a fixed weekly schedule to keep the group consistent. Missed sessions are not rescheduled, which keeps every session focused and on-track for the whole group.' },
       { title: 'Peer-Powered Practice', text: 'Learning alongside others at a similar level creates a natural, low-pressure environment to try new structures and build speaking confidence together.' }
     ]
   },
   coaching: {
     badge: 'MOST POPULAR',
     title: '1-on-1 Coaching',
-    desc: 'Fully personalized sessions tailored to your pace, interests, and goals. Expression-first learning with real-time feedback. Scheduled in 30-minute to 1.5-hour blocks for maximum engagement. Starting from ¥310/hr.',
+    desc: 'Fully personalized sessions tailored to your pace, interests, and goals. Expression-first learning with real-time feedback. Scheduled in 30-minute to 1.5-hour blocks for maximum engagement.',
     features: [
       { title: 'Personalized Curriculum', text: 'Sessions designed around your unique interests, using top-tier materials from Cambridge, National Geographic, and Pearson. When the topic is engaging, the English flows naturally.' },
       { title: 'Real-Time Feedback', text: 'Every word spoken gets immediate, gentle guidance. Participants learn to self-correct through guided conversation, building accuracy without sacrificing confidence.' },
@@ -88,27 +89,24 @@ export default function ProgramModal({ programKey, onClose, onOpenContact }) {
           <h3>1-on-1 Coaching Packages</h3>
           <div className="program-modal-packages-grid">
             <div className="program-modal-pkg">
-              <div className="program-modal-pkg-lessons">20 Lessons</div>
+              <div className="program-modal-pkg-sessions">20 Sessions</div>
               <h4>Starter</h4>
-              <p className="program-modal-pkg-price">¥350/hr · ¥7,000 total</p>
               <p>Recommended completion ~3 months. A solid foundation for new participants exploring the method.</p>
             </div>
             <div className="program-modal-pkg featured">
               <span className="program-modal-pkg-badge">Most Popular</span>
-              <div className="program-modal-pkg-lessons">40 Lessons</div>
+              <div className="program-modal-pkg-sessions">40 Sessions</div>
               <h4>Growth</h4>
-              <p className="program-modal-pkg-price">Tier for alignment</p>
               <p>Recommended completion ~6 months. Enough sessions to see real transformation in expression.</p>
             </div>
             <div className="program-modal-pkg">
-              <div className="program-modal-pkg-lessons">60 Lessons</div>
+              <div className="program-modal-pkg-sessions">60 Sessions</div>
               <h4>Mastery</h4>
-              <p className="program-modal-pkg-price">¥310/hr · ¥18,600 total</p>
-              <p>Recommended completion ~9-12 months. Deep, lasting fluency. The best per-lesson value.</p>
+              <p>Recommended completion ~9-12 months. Deep, lasting fluency. The best per-session value.</p>
             </div>
           </div>
         </div>
-        <button type="button" className="program-modal-cta" onClick={handleCta}>Book an Assessment</button>
+        <button type="button" className="program-modal-cta" onClick={handleCta}>Apply Now</button>
       </div>
     </div>
   )

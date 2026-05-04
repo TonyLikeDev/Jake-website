@@ -2,6 +2,8 @@
 
 import useReveal from '../hooks/useReveal'
 
+import '../styles/trust-bar.css'
+
 export default function TrustBar() {
   useReveal()
  

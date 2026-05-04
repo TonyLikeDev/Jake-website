@@ -1,4 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
+import '../styles/modals.css'
+import '../styles/contact-form.css'
 
 export default function ContactForm({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false)
@@ -155,9 +157,9 @@ export default function ContactForm({ isOpen, onClose }) {
               <textarea placeholder="Tell us anything else about your needs..." rows="3"></textarea>
             </div>
             <button type="submit" className="form-submit" style={submitted ? { background: '#2d7a4f', color: '#fff' } : {}}>
-              {submitted ? 'Enquiry Sent ✓' : 'SUBMIT ENQUIRY'}
+              {submitted ? 'Enquiry received. We\'ll be in touch within 24 hours.' : 'SUBMIT ENQUIRY'}
             </button>
-            <p className="form-note">We'll respond within 24 hours to schedule your trial assessment.</p>
+            <p className="form-note">{submitted ? '' : 'We\'ll respond within 24 hours to schedule your trial assessment.'}</p>
             <p className="form-privacy">By submitting this form, you consent to us contacting you regarding your enquiry. We respect your privacy and will not share your information.</p>
           </form>
         </div>

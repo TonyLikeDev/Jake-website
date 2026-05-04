@@ -1,0 +1,68 @@
+/* How it Works / Method */
+.method-section { background: var(--white); }
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+}
+.method-card {
+    padding: 48px 36px;
+    background: var(--cream);
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.method-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+.method-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    opacity: 0.4;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+.method-card h3 {
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-bottom: 16px;
+}
+.method-card p {
+    color: var(--text-light);
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
+/* Programs */
+
+@media (max-width: 1024px) {
+    .method-grid { grid-template-columns: repeat(2, 1fr); }
+    .method-grid .method-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 16px);
+    }
+    .method-grid .method-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 16px);
+    }
+}
+
+@media (max-width: 768px) {
+    .method-grid .method-card:last-child {
+        grid-column: auto;
+        justify-self: auto;
+        width: auto;
+    }
+    .method-grid { grid-template-columns: 1fr; }
+    .method-grid .method-card:last-child {
+        grid-column: auto;
+        justify-self: auto;
+        width: auto;
+    }
+    .method-card p { font-size: 1rem; }
+}

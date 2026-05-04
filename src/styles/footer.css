@@ -1,0 +1,91 @@
+/* Footer */
+footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding: 60px 0 40px;
+}
+.footer-cols {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    align-items: flex-start;
+}
+.footer-col-brand { padding-right: 16px; }
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 14px;
+}
+.footer-brand span { color: var(--gold); }
+.footer-slogan {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+.footer-mission {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+}
+.footer-col-title {
+    color: var(--white);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+.footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col-links a,
+.footer-col-links .footer-link-btn {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    transition: color 0.3s;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+}
+.footer-col-links a:hover,
+.footer-col-links .footer-link-btn:hover { color: var(--gold); }
+.footer-wechat { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+.footer-wechat span { color: var(--white); font-weight: 500; }
+.footer-hours { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+.footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.footer-copy {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+}
+.footer-bottom-links { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.footer-bottom-links a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-bottom-links a:hover { color: var(--gold); }
+.footer-divider { color: rgba(255,255,255,0.2); }
+
+/* Contact Modal */
+
+@media (max-width: 768px) {
+    .footer-cols { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-col-brand { grid-column: 1 / -1; padding-right: 0; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .footer-bottom-links { justify-content: center; }
+}

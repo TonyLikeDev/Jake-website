@@ -1,0 +1,168 @@
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 clamp(20px, 3.5vw, 56px);
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+}
+nav.scrolled {
+    background: var(--dark);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 30px rgba(0,0,0,0.15);
+}
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+.nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+}
+.nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-lang-toggle {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--gold);
+    padding: 2px;
+    border-radius: 4px;
+    position: relative;
+    width: 76px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.nav-lang-toggle .lang-text {
+    flex: 1;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 2;
+    color: rgba(255,255,255,0.4);
+    transition: color 0.3s;
+    line-height: 28px;
+}
+.nav-lang-toggle .lang-text.active {
+    color: var(--dark);
+}
+.nav-lang-toggle .lang-thumb {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    width: calc(50% - 2px);
+    background: var(--gold);
+    border-radius: 3px;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 1;
+}
+.nav-lang-toggle .lang-thumb.left { transform: translateX(0); }
+.nav-lang-toggle .lang-thumb.right { transform: translateX(36px); }
+.nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 10px 24px;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 0.78rem !important;
+    font-weight: 400;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.nav-cta:hover {
+    background: var(--gold);
+    color: var(--dark) !important;
+}
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px;
+}
+.mobile-toggle span {
+    width: 24px;
+    height: 1.5px;
+    background: var(--white);
+    transition: all 0.3s;
+}
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(19, 18, 31, 0.98);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a,
+.mobile-menu button {
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    transition: color 0.3s;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.mobile-menu a:hover,
+.mobile-menu button:hover { color: var(--gold); }
+
+@media (max-width: 1024px) {
+    .nav-logo { font-size: 1.4rem; }
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 0.76rem; letter-spacing: 0.04em; }
+    .nav-cta { padding: 8px 14px; font-size: 0.72rem !important; letter-spacing: 0.08em !important; }
+}
+
+@media (max-width: 768px) {
+    nav { background: var(--dark); }
+    .nav-links { display: none; }
+    .mobile-toggle { display: flex; }
+}

@@ -1,0 +1,137 @@
+/* About */
+.about-section { background: var(--white) }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-top: 40px;
+}
+.about-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+}
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+.about-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid var(--gold);
+    margin: 20px;
+    pointer-events: none;
+    opacity: 0.3;
+}
+.about-content h3 {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 24px;
+}
+.about-content p {
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+.about-stats {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    flex-wrap: wrap;
+}
+.about-stats > div { min-width: 0; flex: 1 1 140px; }
+.about-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    display: block;
+}
+.about-stat-label {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    white-space: nowrap;
+}
+
+/* Philosophy block */
+.philosophy-block {
+    margin-top: 88px;
+    padding-top: 64px;
+    border-top: 1px solid rgba(19,18,31,0.08);
+    text-align: center;
+}
+.philosophy-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 16px auto 48px;
+    max-width: 720px;
+    color: var(--dark);
+}
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    text-align: left;
+    max-width: 980px;
+    margin: 0 auto;
+}
+.philosophy-item {
+    padding: 28px;
+    background: var(--cream, #faf6ec);
+    border: 1px solid rgba(184,134,11,0.12);
+    border-radius: 10px;
+}
+.philosophy-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+.philosophy-item p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--text-light, #3a3a4a);
+}
+@media (max-width: 768px) {
+    .philosophy-block { margin-top: 56px; padding-top: 40px; }
+    .philosophy-heading { font-size: 1.7rem; margin-bottom: 32px; }
+    .philosophy-grid { grid-template-columns: 1fr; gap: 18px; }
+    .philosophy-item { padding: 22px; }
+}
+
+.about-coaches-cta {
+    display: inline-block;
+    margin-top: 32px;
+    text-decoration: none;
+}
+
+/* Coaches Page */
+
+@media (max-width: 1024px) {
+    .about-grid { gap: 48px; }
+}
+
+@media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-image { aspect-ratio: 4/3; }
+    .about-stats { flex-direction: column; gap: 20px; align-items: center; text-align: center; }
+    .about-stats > div { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; }
+}

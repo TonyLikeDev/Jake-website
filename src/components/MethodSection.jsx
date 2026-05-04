@@ -1,6 +1,7 @@
 
 
 import useReveal from '../hooks/useReveal'
+import '../styles/method.css'
 
 export default function MethodSection() {
   useReveal()
@@ -22,7 +23,7 @@ export default function MethodSection() {
           <div className="method-card reveal reveal-delay-1">
             <div className="method-num">02</div>
             <h3>We Build Clear Expression</h3>
-            <p>We guide full ideas first, then refine accuracy through feedback. Students practice speaking in full sentences about things they already know.</p>
+            <p>We guide full ideas first, then refine accuracy through feedback. Participants practice speaking in full sentences about things they already know.</p>
           </div>
           <div className="method-card reveal reveal-delay-2">
             <div className="method-num">03</div>

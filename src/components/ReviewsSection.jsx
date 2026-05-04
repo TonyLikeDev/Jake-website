@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import useReveal from '../hooks/useReveal'
+import '../styles/reviews.css'
 
 const reviews = [
   { id: 1, category: '1on1', text: '"My son went from being terrified to speak English to raising his hand in every session within 4 months. The change wasn\'t overnight-it was steady, and that\'s what made it real. He actually looks forward to his sessions."', avatar: 'L', name: 'Lin', meta: 'Leo, age 8 · 6 months in' },

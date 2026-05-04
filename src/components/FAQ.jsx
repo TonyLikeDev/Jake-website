@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import '../styles/faq.css'
 
 
 const faqs = [
-  { q: 'How is this different from other English coaching?', a: 'Most tutoring focuses on test preparation, vocabulary lists, and grammar drills. Exprimio focuses on the individual\'s ability to think, express, and communicate in English naturally. We use conversation and real topics as the foundation. Grammar and vocabulary are addressed within that context, not as isolated exercises.' },
+  { q: 'How is this different from other English coaching?', a: 'Most coaching focuses on test preparation, vocabulary lists, and grammar practice. Exprimio focuses on the individual\'s ability to think, express, and communicate in English naturally. We use conversation and real topics as the foundation. Grammar and vocabulary are addressed within that context, not as isolated practice.' },
   { q: 'My English level is quite basic. Is that okay?', a: 'Absolutely. Many of our participants start with limited English expression. The method is designed to meet people wherever they are and build from there. We use existing understanding as a bridge and gradually transition to thinking and speaking in English at a natural pace.' },
   { q: 'When will I see improvement?', a: 'Clients typically notice increased confidence within 4-6 weeks. More significant improvements in fluency and comprehension usually emerge around 3-4 months. This isn\'t a quick-fix program-the goal is lasting ability, not temporary improvement.' },
   { q: 'How does a session work?', a: 'Sessions are conducted online via ClassIn, our primary coaching platform, allowing for flexibility and consistency regardless of location. Sessions run from 30 minutes up to 2 hours depending on the program. We keep our schedule intentionally limited to maintain quality.' },
-  { q: 'How much does it cost?', a: 'Pricing varies by program and session frequency. We share detailed pricing during the trial consultation. We understand this is a significant commitment, which is why we offer a trial session first-so you can experience the method before making any financial decision.' },
+  { q: 'How much does it cost?', a: 'Pricing varies by program and session frequency. We share all details during the trial consultation. We understand this is a significant commitment, which is why we offer a trial session first-so you can experience the method before making any decision.' },
   { q: 'How do I know they\'re improving?', a: 'Every program includes regular progress updates. You receive reports covering areas of growth, current focus, and actionable suggestions for real-world practice. Frequency depends on the program you choose.' }
 ]
 

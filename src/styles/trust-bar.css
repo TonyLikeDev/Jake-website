@@ -1,0 +1,90 @@
+/* Trust Bar */
+.trust-bar {
+    background: var(--dark); /* Matching the deep blue from featured program cards */
+    padding: 56px 0;
+    position: relative;
+    border: none;
+}
+
+.trust-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(201, 151, 58, 0.2) 20%, 
+        rgba(201, 151, 58, 0.2) 80%, 
+        transparent 100%
+    );
+}
+
+.trust-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    flex: 1;
+    min-width: 240px;
+    padding: 0 32px;
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.trust-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.trust-item strong {
+    display: block;
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 1024px) {
+    .trust-item {
+        min-width: 50%;
+        padding: 24px;
+    }
+    .trust-item:nth-child(2)::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .trust-bar {
+        padding: 40px 0;
+    }
+    .trust-item {
+        min-width: 100%;
+        padding: 20px 0;
+    }
+    .trust-item::after {
+        display: none !important;
+    }
+    .trust-item:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .trust-items { gap: 24px; }
+}

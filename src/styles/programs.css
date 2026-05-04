@@ -1,0 +1,237 @@
+/* Programs */
+.programs-section { 
+    background: var(--dark); 
+    padding: 100px 0;
+    position: relative;
+}
+
+.programs-section .section-title {
+    color: var(--white);
+}
+
+.programs-section .section-desc {
+    color: rgba(255,255,255,0.6);
+}
+
+.programs-carousel-wrapper { position: relative; }
+.programs-arrow { display: none; }
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+}
+.programs-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+.program-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 32px 28px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    outline: none;
+    border-radius: 4px;
+}
+.program-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(201, 151, 58, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.program-card:focus-visible {
+    box-shadow: 0 0 0 2px var(--gold);
+}
+.program-card.featured {
+    background: rgba(201, 151, 58, 0.05);
+    border-color: var(--gold);
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+}
+.program-hours {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.program-card.featured .program-hours { color: var(--gold-light); }
+.program-highlight {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    background: rgba(212, 160, 23, 0.1);
+    border: 1px solid rgba(212, 160, 23, 0.2);
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    align-self: flex-start;
+}
+.program-card.featured .program-highlight {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+}
+.program-card .program-name {
+    color: var(--white);
+}
+.program-card .program-desc {
+    color: rgba(255, 255, 255, 0.6);
+}
+.program-badge {
+    position: absolute;
+    top: -12px;
+    left: 28px;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 2px;
+}
+.program-age {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.program-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+.program-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 24px;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+.program-note {
+    font-size: 0.75rem;
+    color: var(--gold);
+    margin-bottom: 24px;
+    font-style: italic;
+}
+.program-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    font-weight: 500;
+}
+.program-cta:hover {
+    background: var(--gold);
+    color: var(--dark);
+}
+.program-card.featured .program-cta {
+    background: var(--gold);
+    color: var(--dark);
+}
+.program-card.featured .program-cta:hover {
+    background: var(--gold-light);
+}
+
+/* Different Approach */
+
+@media (max-width: 1024px) {
+    .programs-grid { grid-template-columns: repeat(2, 1fr); }
+    .programs-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .programs-grid-3 .program-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 14px);
+    }
+    .programs-grid-3 .program-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 14px);
+    }
+}
+
+@media (max-width: 768px) {
+    .programs-grid-3 .program-card:last-child {
+        grid-column: auto;
+        justify-self: auto;
+        width: auto;
+    }
+    .programs-grid,
+    .programs-grid-3 {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 82%;
+        grid-template-columns: unset;
+        gap: 14px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 32px 9% 48px;
+        margin: 8px 0 0;
+        scrollbar-width: none;
+    }
+    .programs-grid::-webkit-scrollbar,
+    .programs-grid-3::-webkit-scrollbar { display: none; }
+    .programs-grid .program-card,
+    .programs-grid-3 .program-card {
+        scroll-snap-align: center;
+        min-height: 320px;
+    }
+    .programs-grid-3 .program-card:last-child {
+        grid-column: auto;
+        justify-self: auto;
+        width: auto;
+    }
+    .programs-carousel-wrapper {
+        position: relative;
+        margin: 0 -24px;
+    }
+    .programs-arrow {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 36px;
+        height: 36px;
+        background: var(--white);
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold);
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .programs-arrow.disabled {
+        opacity: 0;
+        pointer-events: none;
+    }
+    .programs-arrow-prev { left: 10px; }
+    .programs-arrow-next { right: 10px; }
+    .program-desc, .approach-card p, .method-card p { font-size: 1rem; }
+}

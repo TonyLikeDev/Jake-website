@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 
+import '../styles/modals.css'
+
 export default function VideoModal({ text, onClose }) {
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose() }

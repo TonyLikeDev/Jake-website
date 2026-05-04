@@ -1,0 +1,161 @@
+/* Coaches Page */
+.coaches-page { background: var(--white); padding-top: 80px; }
+.coaches-hero {
+    padding: 64px 0 32px;
+    text-align: center;
+    border-bottom: 1px solid rgba(19,18,31,0.06);
+}
+.coaches-back {
+    display: inline-block;
+    color: var(--text-light, #555);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+    transition: color 0.2s;
+}
+.coaches-back:hover { color: var(--gold); }
+.coaches-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 16px 0 24px;
+    color: var(--dark);
+}
+.coaches-intro {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+.coaches-grid-section { padding: 72px 0 96px; }
+.coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+.coach-card {
+    background: var(--white);
+    border: 1px solid rgba(19,18,31,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.coach-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(19,18,31,0.08);
+}
+.coach-card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--dark);
+    overflow: hidden;
+}
+.coach-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.coach-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--gold);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.coach-card-image-empty {
+    background: var(--cream, #faf6ec);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px dashed rgba(184,134,11,0.3);
+}
+.coach-placeholder-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    opacity: 0.5;
+}
+.coach-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+.coach-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--dark);
+    margin: 0 0 4px;
+}
+.coach-role {
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    font-weight: 500;
+}
+.coach-credentials {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+.coach-credentials li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+.coach-credentials li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 1px;
+    background: var(--gold);
+}
+.coach-philosophy {
+    font-style: italic;
+    color: var(--text-light, #3a3a4a);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    border-left: 2px solid var(--gold);
+    padding-left: 14px;
+    margin: 0;
+}
+.coach-card-placeholder { opacity: 0.85; }
+.coach-card-placeholder .coach-name { color: var(--text-light, #555); }
+.coaches-footer-cta {
+    text-align: center;
+    margin-top: 72px;
+    padding-top: 56px;
+    border-top: 1px solid rgba(19,18,31,0.06);
+}
+.coaches-footer-cta h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin: 0 0 24px;
+}
+@media (max-width: 768px) {
+    .coaches-page { padding-top: 64px; }
+    .coaches-title { font-size: 2.2rem; }
+    .coaches-grid-section { padding: 48px 0 64px; }
+    .coaches-grid { gap: 20px; }
+    .coach-card-body { padding: 22px; }
+}
+
+/* Reviews */

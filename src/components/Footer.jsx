@@ -2,6 +2,8 @@
 
 import useReveal from '../hooks/useReveal'
 
+import '../styles/footer.css'
+
 export default function Footer({ onOpenContact }) {
   useReveal()
 
@@ -18,10 +20,10 @@ export default function Footer({ onOpenContact }) {
           <div className="footer-col">
             <h5 className="footer-col-title">Quick Links</h5>
             <ul className="footer-col-links">
-              <li><a href="#programs">Programs &amp; Pricing</a></li>
+              <li><a href="#programs">Programs &amp; Sessions</a></li>
               <li><a href="#programs">1-on-1 Coaching</a></li>
               <li><a href="#programs">Group Workshops</a></li>
-              <li><button type="button" className="footer-link-btn" onClick={onOpenContact}>Book an Assessment</button></li>
+              <li><button type="button" className="footer-link-btn" onClick={onOpenContact}>Apply Now</button></li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#how-it-works">Our Philosophy</a></li>
               <li><a href="#how-it-works">The Method</a></li>

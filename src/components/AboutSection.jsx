@@ -1,6 +1,7 @@
 
 
 import useReveal from '../hooks/useReveal'
+import '../styles/about.css'
 
 export default function AboutSection() {
   useReveal()
@@ -14,11 +15,12 @@ export default function AboutSection() {
           </div>
           <div className="about-content">
             <span className="section-label reveal">ABOUT</span>
-            <h3 className="reveal reveal-delay-1">I help learners <em className="gold-text">express</em> what they already understand in English.</h3>
-            <p className="reveal reveal-delay-2">Simple ideas. Clear English. Real results.</p>
-            <p className="reveal reveal-delay-3">Many people study for years, but still cannot speak clearly.
-              Not because they don’t know, but because they cannot express.</p>
-            <p className="reveal reveal-delay-4">We focus on thinking, speaking, and confidence.</p>
+            <h3 className="reveal reveal-delay-1">About the Founder &amp; <em className="gold-text">Creator</em></h3>
+            <p className="reveal reveal-delay-2">Behind every fluent speaker is a coach who understands that true mastery begins with confidence.</p>
+            <p className="reveal reveal-delay-3">With over a decade of experience, I have learned that the most effective growth doesn’t come from rigid rules or textbooks. It comes from genuine connection.</p>
+            <p className="reveal reveal-delay-4">Currently based in Vietnam, I bring a unique international perspective to my coaching. This background allows me to provide children with a truly global lens, helping them see English not just as a school subject, but as a gateway to the world.</p>
+            <p className="reveal reveal-delay-4">My philosophy centers on accompanying growth. I focus on building real trust and creating a relaxed space where individuals feel safe to express their ideas, take risks, and find their unique voice. This “expression-first” approach guides ambitious young learners to transform what they know into natural, high-level English.</p>
+            <p className="reveal reveal-delay-4">What parents value most isn’t just the curriculum—it’s having a dedicated mentor who makes their child feel confident, supported, and eager to connect.</p>
             <div className="about-stats reveal">
               <div>
                 <span className="about-stat-num">8+ Years</span>
@@ -33,6 +35,7 @@ export default function AboutSection() {
                 <span className="about-stat-label">Hours of Coaching</span>
               </div>
             </div>
+            {/* <a href="#coaches" className="btn-primary about-coaches-cta reveal">Meet Our Coaches</a> */}
           </div>
         </div>
 

@@ -1,3 +1,5 @@
+import '../styles/navbar.css'
+
 export default function MobileMenu({ isOpen, onToggleMobile, onOpenContact }) {
   const handleContact = () => {
     onToggleMobile()
@@ -9,7 +11,7 @@ export default function MobileMenu({ isOpen, onToggleMobile, onOpenContact }) {
       <a href="#programs" onClick={onToggleMobile}>Programs</a>
       <a href="#about" onClick={onToggleMobile}>About</a>
       <a href="#reviews" onClick={onToggleMobile}>Results</a>
-      <button type="button" onClick={handleContact}>Book an Assessment</button>
+      <button type="button" onClick={handleContact}>Apply Now</button>
     </div>
   )
 }
