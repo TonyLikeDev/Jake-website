@@ -5,23 +5,23 @@ const programData = {
   group: {
     badge: 'GROUP WORKSHOPS',
     title: 'Group Workshops',
-    desc: 'Small-group workshops (max 4 participants) focused on conversation, comprehension, and confidence-building. Hosted on ClassIn, scheduled in 1, 1.5, or 2-hour blocks.',
+    desc: 'Small groups (usually 3–6 students) focused on speaking, understanding, and confidence.',
     features: [
-      { title: 'Small Groups, Maximum Impact', text: 'Maximum 4 participants per session ensures each person gets speaking time while benefiting from peer interaction. Groups are carefully matched by level and age.' },
-      { title: 'Conversation-First Learning', text: 'Sessions built around real topics-science, culture, current events-not textbooks. Participants practice expressing ideas they already understand, building fluency naturally.' },
-      { title: 'Fixed Weekly Schedule', text: 'Workshops follow a fixed weekly schedule to keep the group consistent. Missed sessions are not rescheduled, which keeps every session focused and on-track for the whole group.' },
-      { title: 'Peer-Powered Practice', text: 'Learning alongside others at a similar level creates a natural, low-pressure environment to try new structures and build speaking confidence together.' }
+      { title: 'Small Groups. Real Speaking.', text: 'Every student speaks in every session. Groups are carefully matched by level and age.' },
+      { title: 'Speak About Real Ideas', text: 'We don’t rely only on textbooks. Students discuss real topics and express ideas they already understand.' },
+      { title: 'Consistent Weekly Schedule', text: 'Same group, same time each week. This builds momentum and real progress.' },
+      { title: 'Learn With Others', text: 'Students improve faster when they speak with peers, especially with new people. This creates a natural, low-pressure environment.' }
     ]
   },
   coaching: {
     badge: 'MOST POPULAR',
     title: '1-on-1 Coaching',
-    desc: 'Fully personalized sessions tailored to your pace, interests, and goals. Expression-first learning with real-time feedback. Scheduled in 30-minute to 1.5-hour blocks for maximum engagement.',
+    desc: 'Fully personalized sessions focused on clear expression and real communication.',
     features: [
-      { title: 'Personalized Curriculum', text: 'Sessions designed around your unique interests, using top-tier materials from Cambridge, National Geographic, and Pearson. When the topic is engaging, the English flows naturally.' },
-      { title: 'Real-Time Feedback', text: 'Every word spoken gets immediate, gentle guidance. Participants learn to self-correct through guided conversation, building accuracy without sacrificing confidence.' },
-      { title: 'Flexible Pacing', text: 'Sessions run from 30 minutes up to 1.5 hours - we adapt to your rhythm. Some participants need more time on foundations; others move into advanced discussion quickly.' },
-      { title: 'Periodic Progress Reports', text: 'Parents and learners receive structured progress feedback from the Coach at fixed intervals during the package - clear, meaningful communication about real growth.' }
+      { title: 'Built Around the Student', text: 'Lessons follow the student’s interests and level. When the topic is engaging, English flows naturally.' },
+      { title: 'Real-Time Feedback', text: 'We guide every sentence. Students learn to correct themselves while speaking.' },
+      { title: 'Flexible Pace', text: 'Some students need more foundation. Others move quickly into advanced discussion.' },
+      { title: 'Clear Progress Updates', text: 'Parents receive structured feedback on real improvement.' }
     ]
   },
   jake: {
@@ -38,12 +38,13 @@ const programData = {
   ielts: {
     badge: 'SPECIALIST PROGRAM',
     title: 'IELTS Specialist',
-    desc: 'Score-focused preparation for IELTS Academic and General Training. Covers all four skills-Listening, Reading, Writing, Speaking-with exam strategies, timed practice, and mock assessments.',
+    desc: 'Focused preparation for IELTS Academic and General Training.',
     features: [
-      { title: 'All Four Skills Covered', text: 'Listening, Reading, Writing, Speaking-we develop all four systematically. We build a balanced profile so no single skill holds the overall score back.' },
-      { title: 'Exam Strategies & Timed Practice', text: 'We teach exam-specific strategies-time management, question analysis, response structuring-so you perform at your best under pressure.' },
-      { title: 'Mock Assessments', text: 'Regular mock tests simulate real exam conditions. Participants become comfortable with the format, timing, and expectations before the actual test day.' },
-      { title: 'Dedicated IELTS Specialists', text: 'Our team includes coaches who specialise exclusively in IELTS preparation. They know the scoring rubrics, common pitfalls, and where you gain the most points.' }
+      { title: 'All Skills. One Strategy.', text: 'Listening, Reading, Writing, Speaking—developed together for a balanced score.' },
+      { title: 'Think, Then Answer Clearly', text: 'We train how to structure responses, not just memorize answers.' },
+      { title: 'Timed Practice That Matters', text: 'Students learn how to manage time and perform under pressure.' },
+      { title: 'Real Exam Experience', text: 'Mock tests build familiarity and confidence before test day.' },
+      { title: 'Expert Guidance', text: 'Specialist coaches focus only on IELTS and know where students gain points.' }
     ]
   }
 }

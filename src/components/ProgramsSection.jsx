@@ -9,7 +9,7 @@ const programs = [
     name: 'Group Workshops',
     hours: 'From ¥210/hr · 1, 1.5 or 2-hour blocks',
     highlight: 'Shared-room practice',
-    desc: 'Small groups, max 4. Fixed schedule, conversation-focused. Build communication through real-world expression.',
+    desc: 'Small groups (usually 3–6 students) focused on speaking, understanding, and confidence.',
     badge: 'MOST POPULAR',
   },
   {
@@ -18,7 +18,7 @@ const programs = [
     name: '1-on-1 Coaching',
     hours: 'From ¥310/hr · 30 min to 1.5-hour blocks',
     highlight: 'Personal pace & topics',
-    desc: 'Fully personalized sessions tailored to your pace, interests, and goals. Expression-first learning with real-time feedback.',
+    desc: 'Fully personalized sessions focused on clear expression and real communication.',
     badge: 'LIMITED AVAILABILITY',
   },
   {
@@ -27,7 +27,7 @@ const programs = [
     name: 'IELTS Specialist',
     hours: 'Exam-focused coaching · Cambridge-aligned',
     highlight: 'Score-focused prep',
-    desc: 'All four skills covered. Strategic preparation for IELTS Academic and General Training.',
+    desc: 'Focused preparation for IELTS Academic and General Training.',
   },
 ]
 
