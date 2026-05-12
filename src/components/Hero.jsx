@@ -14,7 +14,7 @@ export default function Hero({ onOpenContact }) {
             <div className="hero-badge-dot"></div>
             <span>Accepting Applications for summer break 2026</span>
           </div>
-          <h1 className="reveal reveal-delay-1">People Already Know More Than They Think. <em>Most just haven&apos;t been taught how to communicate it clearly in English.</em></h1>
+          <h1 className="reveal reveal-delay-1">People Already Know More Than They Think. <em>we help them express it clearly and confidently in English.</em></h1>
           <p className="hero-sub reveal reveal-delay-2">Premium English Expression</p>
           <div className="hero-actions reveal reveal-delay-3">
             <button type="button" className="btn-primary" onClick={onOpenContact}>Apply Now</button>
