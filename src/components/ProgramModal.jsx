@@ -90,20 +90,23 @@ export default function ProgramModal({ programKey, onClose, onOpenContact }) {
           <h3>1-on-1 Coaching Packages</h3>
           <div className="program-modal-packages-grid">
             <div className="program-modal-pkg">
-              <div className="program-modal-pkg-sessions">20 Sessions</div>
+              <div className="program-modal-pkg-sessions">20 Hours</div>
               <h4>Starter</h4>
               <p>Recommended completion ~3 months. A solid foundation for new participants exploring the method.</p>
+              <div className="program-modal-pkg-price">7,000 RMB</div>
             </div>
             <div className="program-modal-pkg featured">
               <span className="program-modal-pkg-badge">Most Popular</span>
-              <div className="program-modal-pkg-sessions">40 Sessions</div>
+              <div className="program-modal-pkg-sessions">40 Hours</div>
               <h4>Growth</h4>
               <p>Recommended completion ~6 months. Enough sessions to see real transformation in expression.</p>
+              <div className="program-modal-pkg-price">13,200 RMB</div>
             </div>
             <div className="program-modal-pkg">
-              <div className="program-modal-pkg-sessions">60 Sessions</div>
+              <div className="program-modal-pkg-sessions">60 Hours</div>
               <h4>Mastery</h4>
               <p>Recommended completion ~9-12 months. Deep, lasting fluency. The best per-session value.</p>
+              <div className="program-modal-pkg-price">18,000 RMB</div>
             </div>
           </div>
         </div>

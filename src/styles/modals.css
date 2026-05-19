@@ -235,6 +235,16 @@
     color: var(--text-light);
     line-height: 1.6;
 }
+.program-modal-pkg-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-top: 12px;
+}
+.program-modal-pkg.featured .program-modal-pkg-price {
+    color: #fff;
+}
 .program-modal-cta {
     display: block;
     width: 100%;

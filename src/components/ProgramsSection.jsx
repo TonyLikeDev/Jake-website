@@ -7,7 +7,6 @@ const programs = [
     key: 'group',
     tag: 'GROUP WORKSHOPS',
     name: 'Group Workshops',
-    hours: 'From ¥210/hr · 1, 1.5 or 2-hour blocks',
     highlight: 'Shared-room practice',
     desc: 'Small groups (usually 3–6 students) focused on speaking, understanding, and confidence.',
     badge: 'MOST POPULAR',
@@ -16,7 +15,6 @@ const programs = [
     key: 'coaching',
     tag: '1-ON-1 COACHING',
     name: '1-on-1 Coaching',
-    hours: 'From ¥310/hr · 30 min to 1.5-hour blocks',
     highlight: 'Personal pace & topics',
     desc: 'Fully personalized sessions focused on clear expression and real communication.',
     badge: 'LIMITED AVAILABILITY',
@@ -25,7 +23,6 @@ const programs = [
     key: 'ielts',
     tag: 'SPECIALIST',
     name: 'IELTS Specialist',
-    hours: 'Exam-focused coaching · Cambridge-aligned',
     highlight: 'Score-focused prep',
     desc: 'Focused preparation for IELTS Academic and General Training.',
   },
@@ -104,7 +101,6 @@ export default function ProgramsSection({ onOpenProgram }) {
                 {p.badge && <div className="program-badge">{p.badge}</div>}
                 <div className="program-age">{p.tag}</div>
                 <h3 className="program-name">{p.name}</h3>
-                <div className="program-hours">{p.hours}</div>
                 <div className="program-highlight">{p.highlight}</div>
                 <p className="program-desc">{p.desc}</p>
                 <button
